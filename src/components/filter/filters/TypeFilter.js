@@ -3,6 +3,7 @@ import React from 'react';
 import '../../../styles/type_filter.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterItems, restoreItems, addFilter, removeFilter } from '../../../redux/actions';
+import { updateFilters } from '../../../helpers/Helpers';
 
 const typeFilters = [
   { label: 'Packages', type: 'package' },
@@ -19,13 +20,7 @@ const TypeFilter = props => {
     const className = event.target.className;
     console.log(className);
     if (className.indexOf('clicked') !== -1) {
-      if (filters.length === 1) {
-        dispatch(removeFilter(event.target.className.split(' ')[0]));
-        dispatch(restoreItems());
-      } else {
-        dispatch(removeFilter(event.target.className.split(' ')[0]));
-        dispatch(filterItems(items));
-      }
+      updateFilters(dispatch, filters, items, event.target.className.split(' ')[0])
       event.target.className = className.split(' ')[0];
     } else {
       dispatch(addFilter(event.target.className));

@@ -1,3 +1,5 @@
+import { filterItems, removeFilter, restoreItems } from '../redux/actions';
+
 /**
  * set window.local storage with auth credentials
  * @param {Object} tokenInfo - object of response token from api
@@ -36,4 +38,37 @@ export const totalCartQuantity = items => {
     cartQuantity += item.cartQuantity;
   });
   return cartQuantity;
+};
+
+export const updateFilters = (dispatch, filters, items, filter) => {
+  if (filters.length === 1) {
+    dispatch(removeFilter(filter));
+    dispatch(restoreItems());
+  } else {
+    dispatch(removeFilter(filter));
+    dispatch(filterItems(items));
+  }
+};
+
+export const getFilteredItems = (items, filters) => {
+  const filteredItems = [];
+  // if 'oos' filter then filter any that have 0 quantity, then filter based on the other filters
+  items.forEach(item => {
+    if (filters.indexOf('oos') !== -1) {
+      if (item.quantity > 0) {
+        if (filters.length === 1) {
+          filteredItems.push(item);
+        } else {
+          if (filters.indexOf(item.type) !== -1) {
+            filteredItems.push(item);
+          }
+        }
+      }
+    } else {
+      if (filters.indexOf(item.type) !== -1) {
+        filteredItems.push(item);
+      }
+    }
+  });
+  return filteredItems;
 };

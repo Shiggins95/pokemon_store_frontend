@@ -1,3 +1,5 @@
+import { getFilteredItems } from '../../helpers/Helpers';
+
 const startingState = {
   items: [],
   filteredItems: [],
@@ -7,17 +9,13 @@ const itemsReducer = (state = startingState, action) => {
   const { items, filters } = state;
   switch (action.type) {
     case 'SET_ITEMS':
-      // console.log('state', state.items);
-      // console.log('action', action.items);
       return { items: action.items, filteredItems: action.items, filters: filters };
     case 'SET_FILTERED_ITEMS':
-      // console.log('state', state.items);
-      // console.log('action', action.items);
       return { ...state, filteredItems: action.items };
     case 'HIDE_OOS':
       return { ...state, filteredItems: state.filteredItems.filter(item => item.quantity > 0) };
     case 'FILTER_ITEMS':
-      return { ...state, filteredItems: items.filter(item => filters.indexOf(item.type) !== -1) };
+      return { ...state, filteredItems: getFilteredItems(items, filters) };
     case 'RESTORE_ITEMS':
       return { ...state, filteredItems: [...items] };
     case 'ADD_FILTER':

@@ -2,21 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/product.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, showCart, setItems, setFilteredItems } from '../redux/actions';
+import { addToCart, showCart, setItems, setFilteredItems, filterItems, addFilter } from '../redux/actions';
 import { Link } from 'react-router-dom';
 
 const Product = props => {
   const { item } = props;
   const dispatch = useDispatch();
-  const { items, filteredItems } = useSelector(state => state.items);
+  const { items, filteredItems, filters } = useSelector(state => state.items);
   const handleClick = event => {
     console.log('ITEM PROD', item);
     console.log('ITEM QTY PROD', item.quantity);
-    if (item.quantity > 0) {
+    if (item.quantity > 1) {
       item.quantity -= 1;
       dispatch(addToCart(event.target.value, items));
       dispatch(showCart());
       dispatch(setFilteredItems(filteredItems));
+    } else {
+      console.log(item);
+      if (item.quantity === 1) {
+        item.quantity -= 1;
+        dispatch(setFilteredItems(filteredItems));
+      }
+      if (filters.indexOf('oos') !== -1) {
+        dispatch(filterItems(items));
+      }
     }
   };
   return (

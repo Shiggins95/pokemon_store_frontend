@@ -6,6 +6,7 @@ import NavBar from './navbar/navbar.js';
 import './styles/app.css';
 import StoreContainer from './containers/StoreContainer';
 import { useSelector } from 'react-redux';
+import ShoppingCart from './components/ShoppingCart';
 
 function App() {
   const auth = useSelector(state => state.auth);
@@ -15,6 +16,9 @@ function App() {
       <div className="app_container">
         <div className="nav_container">
           <NavBar auth={auth} />
+        </div>
+        <div className="shopping_cart_container">
+          <ShoppingCart />
         </div>
         <div className="routes_container">
           <Route exact path="/login" component={LoginContainer} />

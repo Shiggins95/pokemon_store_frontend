@@ -10,11 +10,11 @@ import StoreFilters from '../components/filter/StoreFilters.js';
 
 const StoreContainer = props => {
   const dispatch = useDispatch();
-  const { items, filteredItems } = useSelector(state => state.items);
+  const { items, filteredItems, filters } = useSelector(state => state.items);
 
   // console.log('ITEMS SC: ', items);
   // console.log('ITEMS FILTERED SC: ', filteredItems);
-
+  console.log('FILTERS: ', filters);
   const getData = async () => {
     const response = await get('/api/products/');
     // console.log(response);
@@ -30,7 +30,8 @@ const StoreContainer = props => {
     }
   }, [dispatch, items]);
 
-  const itemsToUse = items.length === filteredItems.length ? items : filteredItems;
+  // const itemsToUse = items.length === filteredItems.length ? items : filteredItems;
+  const itemsToUse = filteredItems;
   // localStorage.removeItem('shopping_cart');
   // console.log('ITEMS:', items);
   // console.log(JSON.parse(localStorage.getItem('shopping_cart')));
@@ -38,18 +39,12 @@ const StoreContainer = props => {
     <div className="store_container">store</div>
   ) : (
     <div className="store_container">
-      <div className="header">
-        <h1>Pokemon Store</h1>
-      </div>
       <StoreFilters />
       <div className="products">
         {itemsToUse.map((item, index) => {
           // return <h1 key={index}>{item.name}</h1>;
           return <Product key={index} item={item} />;
         })}
-      </div>
-      <div className="shopping_cart_conatainer">
-        <ShoppingCart />
       </div>
     </div>
   );

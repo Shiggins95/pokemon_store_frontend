@@ -20,32 +20,16 @@ const OtherFilter = props => {
     const value = event.target.value;
     switch (value) {
       case 'default':
-        if (filteredItems.length === items.length) {
-          items.sort((item1, item2) => parseInt(item1.id, 10) - parseInt(item2.id, 10));
-          dispatch(setItems(items));
-        } else {
-          filteredItems.sort((item1, item2) => parseInt(item1.id, 10) - parseInt(item2.id, 10));
-          dispatch(setItems(filteredItems));
-        }
+        filteredItems.sort((item1, item2) => parseInt(item1.id, 10) - parseInt(item2.id, 10));
+        dispatch(setItems(filteredItems));
         break;
       case 'price_asc':
-        if (filteredItems.length === items.length) {
-          items.sort((item1, item2) => item1.price - item2.price);
-          dispatch(setFilteredItems(items));
-        } else {
-          filteredItems.sort((item1, item2) => item1.price - item2.price);
-          dispatch(setFilteredItems(filteredItems));
-        }
-
+        filteredItems.sort((item1, item2) => item1.price - item2.price);
+        dispatch(setFilteredItems(filteredItems));
         break;
       case 'price_desc':
-        if (filteredItems.length === items.length) {
-          items.sort((item1, item2) => item2.price - item1.price);
-          dispatch(setFilteredItems(items));
-        } else {
-          filteredItems.sort((item1, item2) => item2.price - item1.price);
-          dispatch(setFilteredItems(filteredItems));
-        }
+        filteredItems.sort((item1, item2) => item2.price - item1.price);
+        dispatch(setFilteredItems(filteredItems));
         break;
       default:
         dispatch(setItems(items));
