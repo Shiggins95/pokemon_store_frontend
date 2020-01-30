@@ -1,4 +1,5 @@
 import { filterItems, removeFilter, restoreItems } from '../redux/actions';
+import { useDispatch } from 'react-redux';
 
 /**
  * set window.local storage with auth credentials
@@ -52,23 +53,61 @@ export const updateFilters = (dispatch, filters, items, filter) => {
 
 export const getFilteredItems = (items, filters) => {
   const filteredItems = [];
+  const sorting = ['price_asc', 'price_desc', 'default'];
+  let sortIndex = false;
+  let sortingExists = false;
+  filters.forEach((filter, index) => {
+    if (sorting.indexOf(filter) !== -1) {
+      sortingExists = true;
+      sortIndex = index;
+    }
+  });
+  console.log(filters[sortIndex]);
+  console.log(sortingExists);
+  let newFilters = filters;
   // if 'oos' filter then filter any that have 0 quantity, then filter based on the other filters
+  if (sortingExists && sortIndex !== false) {
+    switch (filters[sortIndex]) {
+      case 'default':
+        items = items.sort((item1, item2) => parseInt(item1.id, 10) - parseInt(item2.id, 10));
+        newFilters = filters.filter(filter => filter !== 'default');
+        break;
+      case 'price_desc':
+        console.log('case 1', newFilters);
+        items = items.sort((item1, item2) => item2.price - item1.price);
+        newFilters = filters.filter(filter => filter !== 'price_desc');
+        console.log('case 2', newFilters);
+        break;
+      case 'price_asc':
+        items = items.sort((item1, item2) => item1.price - item2.price);
+        newFilters = filters.filter(filter => filter !== 'price_asc');
+        break;
+      default:
+        break;
+    }
+  }
+
+  if (newFilters.length === 0) {
+    return { filteredItems: items, newFilters };
+  }
+
+  console.log('FILTERS', newFilters);
   items.forEach(item => {
-    if (filters.indexOf('oos') !== -1) {
+    if (newFilters.indexOf('oos') !== -1) {
       if (item.quantity > 0) {
-        if (filters.length === 1) {
+        if (newFilters.length === 1) {
           filteredItems.push(item);
         } else {
-          if (filters.indexOf(item.type) !== -1) {
+          if (newFilters.indexOf(item.type) !== -1) {
             filteredItems.push(item);
           }
         }
       }
     } else {
-      if (filters.indexOf(item.type) !== -1) {
+      if (newFilters.indexOf(item.type) !== -1) {
         filteredItems.push(item);
       }
     }
   });
-  return filteredItems;
+  return { filteredItems, newFilters };
 };

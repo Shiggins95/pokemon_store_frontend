@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import '../../../styles/other_filter.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { setItems, setFilteredItems } from '../../../redux/actions';
+import { setItems, setFilteredItems, addFilter, filterItems, removeFilter } from '../../../redux/actions';
 
 const options = [
   { label: 'Price (ASC)', value: 'price_asc' },
@@ -12,24 +12,34 @@ const options = [
 ];
 
 const OtherFilter = props => {
-  const { items, filteredItems } = useSelector(state => state.items);
+  const { items, filteredItems, filters } = useSelector(state => state.items);
   // console.log('ITEMS: ', items);
   // console.log('FILTERED ITEMS: ', filteredItems);
   const dispatch = useDispatch();
+  let existingFilters = [false];
+  options.forEach(option => {
+    if (filters.indexOf(option.value) !== -1) existingFilters.push(option.value);
+  });
   const handleChange = event => {
     const value = event.target.value;
     switch (value) {
       case 'default':
-        filteredItems.sort((item1, item2) => parseInt(item1.id, 10) - parseInt(item2.id, 10));
-        dispatch(setItems(filteredItems));
+        dispatch(removeFilter('price_asc'));
+        dispatch(removeFilter('price_desc'));
+        dispatch(addFilter('default'));
+        dispatch(filterItems());
         break;
       case 'price_asc':
-        filteredItems.sort((item1, item2) => item1.price - item2.price);
-        dispatch(setFilteredItems(filteredItems));
+        dispatch(removeFilter('default'));
+        dispatch(removeFilter('price_desc'));
+        dispatch(addFilter('price_asc'));
+        dispatch(filterItems());
         break;
       case 'price_desc':
-        filteredItems.sort((item1, item2) => item2.price - item1.price);
-        dispatch(setFilteredItems(filteredItems));
+        dispatch(removeFilter('price_asc'));
+        dispatch(removeFilter('default'));
+        dispatch(addFilter('price_desc'));
+        dispatch(filterItems());
         break;
       default:
         dispatch(setItems(items));

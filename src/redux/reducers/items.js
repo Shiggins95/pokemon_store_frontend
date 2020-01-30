@@ -15,7 +15,8 @@ const itemsReducer = (state = startingState, action) => {
     case 'HIDE_OOS':
       return { ...state, filteredItems: state.filteredItems.filter(item => item.quantity > 0) };
     case 'FILTER_ITEMS':
-      return { ...state, filteredItems: getFilteredItems(items, filters) };
+      const { filteredItems, newFilters } = getFilteredItems(items, filters);
+      return { items, filteredItems, filters: newFilters };
     case 'RESTORE_ITEMS':
       return { ...state, filteredItems: [...items] };
     case 'ADD_FILTER':
