@@ -1,0 +1,52 @@
+.type_filter {
+  width: 30%;
+  text-align: center;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.type_filter .filters {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.type_filter .filters div {
+  margin: 5px;
+  border: 1px solid #0cb9ff;
+  color: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #0ceeff;
+  width: 40%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.type_filter .filters div:hover {
+  cursor: pointer;
+}
+.type_filter .filters div:active {
+  -webkit-transform: translateY(0.5px);
+  -moz-transform: translateY(0.5px);
+  -ms-transform: translateY(0.5px);
+  -o-transform: translateY(0.5px);
+  transform: translateY(0.5px);
+}
+.type_filter .filters .clicked {
+  border-color: #0ceeff;
+  background: #0cb9ff;
+}
+
+/*# sourceMappingURL=type_filter.css.map */

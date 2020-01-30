@@ -1,0 +1,107 @@
+.fa_menu_bars {
+  color: #0cb9ff;
+  padding: 0 1px;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+  position: fixed;
+  top: 15px;
+  left: 25px;
+  z-index: 100;
+}
+.fa_menu_bars:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.fa_cart {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  color: #0cb9ff;
+}
+
+.navbar_container .navbar {
+  overflow-y: scroll;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  background: rgba(12, 238, 255, 0.8);
+  border-right: 5px solid #0cb9ff;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 20vw;
+}
+.navbar_container .navbar .link {
+  color: rgba(12, 238, 255, 0.8);
+  text-decoration: none;
+  -webkit-border-radius: 5px;
+  font-weight: bold;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+  width: 90%;
+  padding: 20px 0;
+  margin: 5px 0;
+  text-align: center;
+  background: #0cb9ff;
+  border: 1px solid transparent;
+}
+.navbar_container .navbar .link:hover {
+  color: white;
+  border-color: white;
+}
+.navbar_container .navbar #log_in_out_button {
+  position: absolute;
+  bottom: 50px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 80%;
+  padding: 10px 0;
+}
+
+.hide {
+  left: -20vw;
+}
+
+.show {
+  left: 0px;
+}
+
+@media (max-width: 500px) {
+  .navbar_container .navbar {
+    width: 100vw;
+    height: 100%;
+  }
+  .navbar_container .hide {
+    left: -100%;
+    height: 100%;
+  }
+}
+
+/*# sourceMappingURL=navbar.css.map */

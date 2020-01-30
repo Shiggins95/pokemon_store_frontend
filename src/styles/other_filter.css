@@ -1,0 +1,32 @@
+.other_filter {
+  width: 30%;
+  display: flex;
+  height: 200px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.other_filter .filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+.other_filter .filters select {
+  border: 1px solid #0cb9ff;
+  font-size: 1em;
+  width: 80%;
+  height: 40px;
+  background: #0ceeff;
+  color: white;
+}
+.other_filter .filters select:hover {
+  cursor: pointer;
+}
+.other_filter .filters select:focus {
+  outline: none;
+}
+
+/*# sourceMappingURL=other_filter.css.map */
