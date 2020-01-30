@@ -29,23 +29,20 @@ const StoreContainer = props => {
       });
     }
   }, [dispatch, items]);
-
-  // const itemsToUse = items.length === filteredItems.length ? items : filteredItems;
-  const itemsToUse = filteredItems;
-  // localStorage.removeItem('shopping_cart');
-  // console.log('ITEMS:', items);
-  // console.log(JSON.parse(localStorage.getItem('shopping_cart')));
-  return itemsToUse.length === 0 ? (
-    <div className="store_container">store</div>
-  ) : (
+  return (
     <div className="store_container">
       <StoreFilters />
-      <div className="products">
-        {itemsToUse.map((item, index) => {
-          // return <h1 key={index}>{item.name}</h1>;
-          return <Product key={index} item={item} />;
-        })}
-      </div>
+      {filteredItems.length > 0 ? (
+        <div className="products">
+          {filteredItems.map((item, index) => {
+            return <Product key={index} item={item} />;
+          })}
+        </div>
+      ) : (
+        <div className="store_container">
+          <h1>No products matched your criteria</h1>
+        </div>
+      )}
     </div>
   );
 };
