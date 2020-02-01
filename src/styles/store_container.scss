@@ -1,4 +1,5 @@
-$primary_color: rgb(12, 238, 255);
+$primary_color: rgba(12, 238, 255, 0.8);
+$third_color: rgba(12, 238, 255, 1);
 $secondary_color: rgb(12, 185, 255);
 .store_container{
   display: flex;
@@ -6,6 +7,9 @@ $secondary_color: rgb(12, 185, 255);
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: $secondary_color;
+  font-weight: bold;
+  letter-spacing: 2px;
   .products{
     width: 100%;
     display: flex;

@@ -7,11 +7,13 @@ import Product from '../components/Product.js';
 import '../styles/store_container.css';
 import ShoppingCart from '../components/ShoppingCart';
 import StoreFilters from '../components/filter/StoreFilters.js';
+import ProductContainer from '../components/ProductContainer';
 
 const StoreContainer = props => {
   const dispatch = useDispatch();
   const { items, filteredItems, filters } = useSelector(state => state.items);
-
+  const shoppingCart = useSelector(state => state.cart);
+  const cartItems = shoppingCart.items;
   // console.log('ITEMS SC: ', items);
   // console.log('ITEMS FILTERED SC: ', filteredItems);
   console.log('FILTERS: ', filters);
@@ -21,28 +23,32 @@ const StoreContainer = props => {
     return response;
   };
 
+  const innerText = filters.length > 0 ? 'No products matched your criteria' : 'Loading...';
+
   // set initial items
   useEffect(() => {
     if (items.length === 0) {
       getData().then(data => {
-        dispatch(setItems(data));
+        data.forEach(item => {
+          item.startingQuantity = item.quantity;
+          cartItems.forEach(cartItem => {
+            if (cartItem.name === item.name) {
+              item.quantity -= cartItem.cartQuantity;
+            }
+          });
+        });
+
+        setTimeout(() => {
+          dispatch(setItems(data));
+        }, 0);
       });
     }
-  }, [dispatch, items]);
+  }, [cartItems, dispatch, items]);
+
   return (
     <div className="store_container">
       <StoreFilters />
-      {filteredItems.length > 0 ? (
-        <div className="products">
-          {filteredItems.map((item, index) => {
-            return <Product key={index} item={item} />;
-          })}
-        </div>
-      ) : (
-        <div className="store_container">
-          <h1>No products matched your criteria</h1>
-        </div>
-      )}
+      <ProductContainer items={filteredItems} innerText={innerText} />
     </div>
   );
 };

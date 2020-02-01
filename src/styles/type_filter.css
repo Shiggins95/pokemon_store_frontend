@@ -1,5 +1,5 @@
 .type_filter {
-  width: 30%;
+  width: 35%;
   text-align: center;
   height: 200px;
   display: flex;
@@ -16,6 +16,8 @@
   width: 100%;
 }
 .type_filter .filters div {
+  font-weight: normal;
+  letter-spacing: 1px;
   margin: 5px;
   border: 1px solid #0cb9ff;
   color: white;

@@ -4,6 +4,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  color: #0cb9ff;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 .store_container .products {
   width: 100%;

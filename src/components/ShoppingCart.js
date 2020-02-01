@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import '../styles/shopping_cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { hideCart, showCart } from '../redux/actions';
+import { hideCart, showCart, clearCart, restoreItems, setItems, updateItem } from '../redux/actions';
 import { useDispatch } from 'react-redux';
 import CartProduct from './CartProduct';
 import { totalCartQuantity } from '../helpers/Helpers';
@@ -15,6 +15,15 @@ const ShoppingCart = props => {
   const className = display ? 'show_cart' : 'hide_cart';
   const labelClassName = display ? 'gap' : 'no_gap';
   const cartQuantity = totalCartQuantity(items);
+  const clearShoppingCart = () => {
+    items.forEach(item => {
+      console.log('IQ: ', item.quantity);
+      console.log('ICQ: ', item.cartQuantity);
+      item.quantity += item.cartQuantity;
+      dispatch(updateItem(item));
+    });
+    dispatch(clearCart());
+  };
   return (
     <div className={`shopping_cart`} style={{ color: 'white' }}>
       <div className={`cart_button ${labelClassName}`} onClick={() => dispatch(display ? hideCart() : showCart())}>
@@ -22,6 +31,9 @@ const ShoppingCart = props => {
         <div className="amount_in_cart">{cartQuantity}</div>
       </div>
       <div className={`shopping_cart_container ${className}`}>
+        <button id="clear_cart_button" onClick={clearShoppingCart}>
+          Clear Cart
+        </button>
         {items.map((item, index) => {
           let productClassName = '';
           if (index === 0) {

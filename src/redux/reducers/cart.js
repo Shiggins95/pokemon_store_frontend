@@ -1,8 +1,11 @@
+import { useDispatch, useSelector } from 'react-redux';
+
 const startingLocalStorage = localStorage.getItem('shopping_cart');
 let parsedStartingLocalStorage = [];
 if (startingLocalStorage) {
   parsedStartingLocalStorage = JSON.parse(startingLocalStorage);
 }
+
 const startingState = { items: parsedStartingLocalStorage, display: false };
 const cartReducer = (state = startingState, action) => {
   const { display } = state;
@@ -30,7 +33,6 @@ const cartReducer = (state = startingState, action) => {
       } else {
         newArray = [];
       }
-      console.log('NEW ARRAY: ', newArray);
 
       // add items from local stoage if they exist
       if (parsedStorage) {
@@ -52,11 +54,8 @@ const cartReducer = (state = startingState, action) => {
         itemToAdd.cartQuantity = 1;
         newArray.push(itemToAdd);
       }
-      console.log('PARSED STORAGE: ', parsedStorage);
-
       // set local storage with new array
       localStorage.setItem('shopping_cart', JSON.stringify(newArray));
-      console.log('NEW ARRAY END: ', newArray);
       // return new state
       return { items: newArray, display };
 
@@ -80,9 +79,12 @@ const cartReducer = (state = startingState, action) => {
       return { items: removedArray, display };
 
     case 'SHOW_CART':
-      return { items: state.items, display: true };
+      return { ...state, display: true };
     case 'HIDE_CART':
-      return { items: state.items, display: false };
+      return { ...state, display: false };
+    case 'CLEAR_CART':
+      localStorage.removeItem('shopping_cart');
+      return { items: [], display: false };
     default:
       return state;
   }

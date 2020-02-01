@@ -83,3 +83,16 @@ export const hideOutOfStock = () => {
     type: 'HIDE_OOS'
   };
 };
+
+export const clearCart = () => {
+  return {
+    type: 'CLEAR_CART'
+  };
+};
+
+export const updateItem = item => {
+  return {
+    type: 'UPDATE_ITEM',
+    item
+  };
+};

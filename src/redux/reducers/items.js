@@ -23,6 +23,16 @@ const itemsReducer = (state = startingState, action) => {
       return { ...state, filters: [...filters, action.newFilter] };
     case 'REMOVE_FILTER':
       return { ...state, filters: filters.filter(filter => filter !== action.filter) };
+    case 'UPDATE_ITEM':
+      const filtered = state.filteredItems;
+      filtered.map(item => {
+        if (item.name === action.item.name) {
+          item = action.item;
+          console.log('item name: ', item);
+        }
+        return item;
+      });
+      return { ...state, filteredItems: filtered };
     default:
       return state;
   }

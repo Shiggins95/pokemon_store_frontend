@@ -9,18 +9,18 @@ const typeFilters = [
   { label: 'Packages', type: 'package' },
   { label: 'Shiny Legends', type: 'shiny_legend' },
   { label: 'Shiny Singles', type: 'shiny_single' },
-  { label: 'Trades', type: 'trades' }
+  { label: 'Event Pokemon', type: 'event' }
 ];
 
 const TypeFilter = props => {
   const { items, filters } = useSelector(state => state.items);
   const dispatch = useDispatch();
-
+  // localStorage.removeItem('shopping_cart');
   const handleClick = event => {
     const className = event.target.className;
     console.log(className);
     if (className.indexOf('clicked') !== -1) {
-      updateFilters(dispatch, filters, items, event.target.className.split(' ')[0])
+      updateFilters(dispatch, filters, items, event.target.className.split(' ')[0]);
       event.target.className = className.split(' ')[0];
     } else {
       dispatch(addFilter(event.target.className));

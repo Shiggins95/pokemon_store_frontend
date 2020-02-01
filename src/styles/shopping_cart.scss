@@ -2,8 +2,11 @@ $primary_color: rgba(12, 238, 255, 0.8);
 $third_color: rgba(12, 238, 255, 1);
 $secondary_color: rgb(12, 185, 255);
 .shopping_cart {
-  width: 400px;
+  z-index: 100;
+  //width: 400px;
   .shopping_cart_container {
+    padding-top: 60px;
+    z-index: 100;
     overflow-y: scroll;
     position: fixed;
     width: 400px;
@@ -16,6 +19,33 @@ $secondary_color: rgb(12, 185, 255);
     align-items: center;
     background: $primary_color;
     border-left: 5px solid $secondary_color;
+  }
+  #clear_cart_button{
+    color: $third_color;
+    font-weight: bold;
+    position: fixed;
+    top: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 300px;
+    height: 40px;
+    z-index: 101;
+    background: $secondary_color;
+    border: 1px solid $third_color;
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -ms-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    transition: 0.2s ease;
+    &:hover{
+      cursor: pointer;
+      color: white;
+      border-color: white;
+    }
+    &:active{
+      outline: none;
+    }
   }
   .cart_button{
     background: $secondary_color;

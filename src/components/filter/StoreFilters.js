@@ -9,8 +9,8 @@ const StoreFilters = props => {
   return (
     <div className="store_filters">
       <TypeFilter />
-      <OtherFilter />
       <OutOfStockFilter />
+      <OtherFilter />
     </div>
   );
 };
