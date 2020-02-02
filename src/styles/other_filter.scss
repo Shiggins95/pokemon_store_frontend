@@ -1,20 +1,11 @@
-$primary_color: rgba(12, 238, 255, 0.8);
-$third_color: rgba(12, 238, 255, 1);
-$secondary_color: rgb(12, 185, 255);
+@import "./variables";
+@import "./mixins";
 .other_filter{
-  //border: 1px solid black;
   width: 30%;
-  display: flex;
   height: 200px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexCenterCol();
   .filters{
-    //border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flexCenterCol();
     height: 100px;
     width: 100%;
     select {

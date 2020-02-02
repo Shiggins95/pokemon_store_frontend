@@ -2,6 +2,11 @@
   z-index: 100;
 }
 .shopping_cart .shopping_cart_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
   padding-top: 60px;
   z-index: 100;
   overflow-y: scroll;
@@ -11,53 +16,51 @@
   top: 0;
   transition: 0.5s ease;
   background: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: rgba(12, 238, 255, 0.8);
   border-left: 5px solid #0cb9ff;
 }
 .shopping_cart #clear_cart_button {
-  color: #0ceeff;
-  font-weight: bold;
-  position: fixed;
-  top: 10px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  width: 300px;
-  height: 40px;
-  z-index: 101;
-  background: #0cb9ff;
-  border: 1px solid #0ceeff;
   -webkit-transition: 0.2s ease;
   -moz-transition: 0.2s ease;
   -ms-transition: 0.2s ease;
   -o-transition: 0.2s ease;
   transition: 0.2s ease;
+  color: #0ceeff;
+  font-weight: bold;
+  position: fixed;
+  top: 10px;
+  width: 300px;
+  height: 40px;
+  z-index: 101;
+  background: #0cb9ff;
+  border: 1px solid #0ceeff;
 }
 .shopping_cart #clear_cart_button:hover {
   cursor: pointer;
-  color: white;
   border-color: white;
+  color: white;
 }
 .shopping_cart #clear_cart_button:active {
   outline: none;
 }
 .shopping_cart .cart_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
   background: #0cb9ff;
   position: fixed;
   padding: 10px;
   color: #0ceeff;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -webkit-transition: 0.5s ease;
-  -moz-transition: 0.5s ease;
-  -ms-transition: 0.5s ease;
-  -o-transition: 0.5s ease;
-  transition: 0.5s ease;
   width: 50px;
   height: 50px;
 }
@@ -69,18 +72,18 @@
   transform: scale(2);
 }
 .shopping_cart .cart_button .amount_in_cart {
-  padding: 1px;
-  position: absolute;
-  color: #0ceeff;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1px;
+  position: absolute;
+  color: #0ceeff;
+  width: 20px;
+  height: 20px;
   border: 1px solid #0ceeff;
   background: black;
   right: 5px;

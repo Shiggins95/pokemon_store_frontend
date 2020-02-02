@@ -1,33 +1,26 @@
 .type_filter {
-  width: 35%;
-  text-align: center;
-  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 35%;
+  text-align: center;
+  height: 200px;
 }
 .type_filter .filters {
   display: flex;
   flex-flow: row wrap;
-  height: 100px;
   justify-content: center;
   align-items: center;
+  height: 100px;
   width: 100%;
 }
 .type_filter .filters div {
-  font-weight: normal;
-  letter-spacing: 1px;
-  margin: 5px;
-  border: 1px solid #0cb9ff;
-  color: white;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  background: #0ceeff;
-  width: 40%;
-  height: 30px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   -webkit-transition: 0.2s ease;
@@ -35,6 +28,14 @@
   -ms-transition: 0.2s ease;
   -o-transition: 0.2s ease;
   transition: 0.2s ease;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin: 5px;
+  border: 1px solid #0cb9ff;
+  color: white;
+  background: #0ceeff;
+  width: 40%;
+  height: 30px;
 }
 .type_filter .filters div:hover {
   cursor: pointer;

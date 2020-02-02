@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
+=======
+@import "./variables";
+@import "./mixins";
+>>>>>>> Stashed changes
 #login_container{
   opacity: 0.99;
   width: 100%;
+<<<<<<< Updated upstream
   height: 100%;
   background: gray;
   display: flex;
@@ -49,6 +55,102 @@
       width: 80%;
       text-align: center;
       padding: 20px 0;
+=======
+  @include flexCenterCol();
+  .display_container{
+    @include boxShadow();
+    background: $primary_color;
+    width: 50vw;
+    height: 50vh;
+    div, form{
+      @include flexCenterCol();
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      label{
+        color: $secondary_color;
+        font-weight: bold;
+        margin: 5px 0;
+        z-index: 100;
+        a{
+          color: white;
+          &:hover{
+            cursor: pointer;
+            opacity: 0.8;
+          }
+        }
+      }
+      input {
+        @include borderRadius(5px);
+        width: 80%;
+        height: 40px;
+        border: 1px solid $secondary_color;
+        margin: 5px;
+        text-align: center;
+        z-index: 100;
+      }
+
+      p{
+        font-weight: bold;
+        width: 80%;
+        font-size: 1.1em;
+        color: $secondary_color
+      }
+    }
+    .checkbox{
+      @include flexCenterRow();
+      width: 80%;
+      height: auto;
+      div{
+        @include flexCenterRow();
+        width: 50%;
+        font-size: 0.8em;
+        text-align: center;
+        input{
+          margin-left: calc(50% - 10px);
+        }
+      }
+    }
+    #login_submit{
+      @include fastTransition();
+      background: $secondary_color;
+      color: $third_color;
+      font-size: 1em;
+      &:hover{
+        @include buttonHover();
+      }
+    }
+    .back_button{
+      position: absolute;
+      height: 50vh;
+      width: 50vw;
+      #fa_back_button{
+        @include fastTransition();
+        position: absolute;
+        top:25px;
+        left: 25px;
+        transform: scale(1.5);
+        color: $secondary_color;
+        z-index: 100;
+        &:hover{
+          @include buttonHover();
+        }
+      }
+    }
+    button{
+      @include fastTransition();
+      width: 250px;
+      height: 50px;
+      background: $secondary_color;
+      border: 1px solid $third_color;
+      margin: 10px 0;
+      color: $third_color;
+      font-size: 1.1em;
+      z-index: 100;
+      &:hover{
+        @include buttonHover();
+      }
+>>>>>>> Stashed changes
     }
   }
 }

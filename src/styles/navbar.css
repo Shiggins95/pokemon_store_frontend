@@ -34,29 +34,26 @@
 }
 
 .navbar_container .navbar {
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow-y: scroll;
   z-index: 99;
   position: fixed;
   top: 0;
   background: rgba(12, 238, 255, 0.8);
   border-right: 5px solid #0cb9ff;
-  -webkit-transition: 0.5s ease;
-  -moz-transition: 0.5s ease;
-  -ms-transition: 0.5s ease;
-  -o-transition: 0.5s ease;
-  transition: 0.5s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   width: 20vw;
 }
 .navbar_container .navbar .link {
-  color: rgba(12, 238, 255, 0.8);
-  text-decoration: none;
   -webkit-border-radius: 5px;
-  font-weight: bold;
   -moz-border-radius: 5px;
   border-radius: 5px;
   -webkit-transition: 0.2s ease;
@@ -64,6 +61,8 @@
   -ms-transition: 0.2s ease;
   -o-transition: 0.2s ease;
   transition: 0.2s ease;
+  color: rgba(12, 238, 255, 0.8);
+  text-decoration: none;
   width: 90%;
   padding: 20px 0;
   margin: 5px 0;
@@ -72,15 +71,16 @@
   border: 1px solid transparent;
 }
 .navbar_container .navbar .link:hover {
-  color: white;
+  cursor: pointer;
   border-color: white;
+  color: white;
 }
 .navbar_container .navbar #log_in_out_button {
-  position: absolute;
-  bottom: 50px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  position: absolute;
+  bottom: 50px;
   width: 80%;
   padding: 10px 0;
 }
