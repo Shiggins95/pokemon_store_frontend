@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import '../../../styles/other_filter.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { setItems, setFilteredItems, addFilter, filterItems, removeFilter } from '../../../redux/actions';
+import { setItems, addFilter, filterItems, removeFilter } from '../../../redux/actions';
 
 const options = [
   { label: 'Price (ASC)', value: 'price_asc' },
@@ -12,14 +12,10 @@ const options = [
 ];
 
 const OtherFilter = props => {
-  const { items, filteredItems, filters } = useSelector(state => state.items);
+  const { items } = useSelector(state => state.items);
   // console.log('ITEMS: ', items);
   // console.log('FILTERED ITEMS: ', filteredItems);
   const dispatch = useDispatch();
-  let existingFilters = [false];
-  options.forEach(option => {
-    if (filters.indexOf(option.value) !== -1) existingFilters.push(option.value);
-  });
   const handleChange = event => {
     const value = event.target.value;
     switch (value) {
@@ -44,7 +40,7 @@ const OtherFilter = props => {
       default:
         dispatch(setItems(items));
     }
-    console.log(value);
+    // console.log(value);
   };
   return (
     <div className="other_filter">

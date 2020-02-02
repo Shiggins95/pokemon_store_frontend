@@ -2,20 +2,13 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import '../../../styles/oos_filter.css';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  addFilter,
-  filterItems,
-  hideOutOfStock,
-  removeFilter,
-  restoreItems,
-  setFilteredItems
-} from '../../../redux/actions';
+import { addFilter, filterItems } from '../../../redux/actions';
 import { updateFilters } from '../../../helpers/Helpers';
 
 const OutOfStockFilter = props => {
-  const { items, filteredItems, filters } = useSelector(state => state.items);
-  console.log('FILTERED OOS: ', filteredItems);
-  console.log('ITEMS OOS: ', items);
+  const { items, filters } = useSelector(state => state.items);
+  // console.log('FILTERED OOS: ', filteredItems);
+  // console.log('ITEMS OOS: ', items);
   const dispatch = useDispatch();
   // const itemsToUse = items.length === filteredItems.length ? items : filteredItems;
   const handleClick = event => {

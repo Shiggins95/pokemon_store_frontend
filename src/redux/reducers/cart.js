@@ -1,5 +1,3 @@
-import { useDispatch, useSelector } from 'react-redux';
-
 const startingLocalStorage = localStorage.getItem('shopping_cart');
 let parsedStartingLocalStorage = [];
 if (startingLocalStorage) {
@@ -64,8 +62,8 @@ const cartReducer = (state = startingState, action) => {
       const removedArray = state.items.filter(item => {
         // if item exists and reducing quantity will not make it 0 then reduce quantity (cartQuantity)
         const currentcartQuantity = item.cartQuantity;
-        console.log('CURRENT ITEM: ', item);
-        console.log('ITEM ID', action.itemId);
+        // console.log('CURRENT ITEM: ', item);
+        // console.log('ITEM ID', action.itemId);
         if (currentcartQuantity > 1 && item.id.toString() === action.itemId.toString()) {
           item.cartQuantity -= 1;
           return item;

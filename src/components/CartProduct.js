@@ -10,6 +10,38 @@ const CartProduct = props => {
   const { items } = useSelector(state => state.items);
   // console.log(items);
   const dispatch = useDispatch();
+  const addItem = event => {
+    // console.log('ITEMMMM: ', item);
+    if (item.quantity > 0) {
+      item.quantity -= 1;
+      dispatch(addToCart(event.target.value, items));
+      dispatch(updateItem(item));
+    }
+  };
+  const removeOneItem = event => {
+    if (cartQuantity === 1) {
+      dispatch(hideCart());
+    }
+    item.quantity += 1;
+    dispatch(removeFromCart(event.target.value, items));
+    dispatch(updateItem(item));
+  };
+
+  const removeItem = event => {
+    if (cartQuantity === 1) {
+      dispatch(hideCart());
+    }
+    for (let i = item.cartQuantity; i > 0; i--) {
+      item.quantity += 1;
+      dispatch(removeFromCart(event.target.value, items));
+    }
+    dispatch(updateItem(item));
+  };
+
+  const getTotalCost = () => {
+    return (item.cartQuantity * item.price).toFixed(2);
+  };
+  const totalCost = getTotalCost();
   return (
     <div className={`cart_product ${productClassName}`}>
       <div className="cart_product_image">
@@ -17,39 +49,19 @@ const CartProduct = props => {
       </div>
       <div className="cart_product_info">
         <p>{item.name}</p>
-        <p>Quantity: {item.cartQuantity}</p>
+        <div className="item_stats">
+          <p>Quantity: {item.cartQuantity}</p>
+          <p>Total: £{totalCost}</p>
+        </div>
         <div className="cart_product_buttons">
-          <button
-            onClick={event => {
-              const item = items.filter(item => {
-                return item.id.toString() === event.target.value;
-              })[0];
-              console.log(item);
-              if (item.quantity > 0) {
-                item.quantity -= 1;
-                dispatch(addToCart(event.target.value, items));
-                dispatch(updateItem(item));
-              }
-            }}
-            value={item.id}
-          >
+          <button onClick={addItem} value={item.id}>
             +
           </button>
-          <button
-            onClick={event => {
-              const item = items.filter(item => {
-                return item.id.toString() === event.target.value;
-              })[0];
-              item.quantity += 1;
-              if (cartQuantity === 1) {
-                dispatch(hideCart());
-              }
-              dispatch(removeFromCart(event.target.value, items));
-              dispatch(updateItem(item));
-            }}
-            value={item.id}
-          >
+          <button onClick={removeOneItem} value={item.id}>
             -
+          </button>
+          <button onClick={removeItem} value={item.id}>
+            Remove
           </button>
         </div>
       </div>

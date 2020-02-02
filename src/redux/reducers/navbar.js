@@ -1,12 +1,8 @@
 const navbarReducer = (state = false, action) => {
-  switch (action.type) {
-    case 'SHOW_NAVBAR':
-      return true;
-    case 'HIDE_NAVBAR':
-      return false;
-    default:
-      return false;
+  if (action.type === 'UPDATE_NAVBAR') {
+    return !state;
   }
+  return state;
 };
 
 export default navbarReducer;

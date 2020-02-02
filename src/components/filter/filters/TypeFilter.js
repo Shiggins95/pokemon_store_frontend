@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import '../../../styles/type_filter.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterItems, restoreItems, addFilter, removeFilter } from '../../../redux/actions';
+import { filterItems, addFilter } from '../../../redux/actions';
 import { updateFilters } from '../../../helpers/Helpers';
 
 const typeFilters = [
@@ -18,7 +18,7 @@ const TypeFilter = props => {
   // localStorage.removeItem('shopping_cart');
   const handleClick = event => {
     const className = event.target.className;
-    console.log(className);
+    // console.log(className);
     if (className.indexOf('clicked') !== -1) {
       updateFilters(dispatch, filters, items, event.target.className.split(' ')[0]);
       event.target.className = className.split(' ')[0];

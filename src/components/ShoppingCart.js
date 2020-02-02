@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import '../styles/shopping_cart.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { hideCart, showCart, clearCart, restoreItems, setItems, updateItem } from '../redux/actions';
+import { hideCart, showCart, clearCart, updateItem } from '../redux/actions';
 import { useDispatch } from 'react-redux';
 import CartProduct from './CartProduct';
 import { totalCartQuantity } from '../helpers/Helpers';
@@ -17,8 +17,6 @@ const ShoppingCart = props => {
   const cartQuantity = totalCartQuantity(items);
   const clearShoppingCart = () => {
     items.forEach(item => {
-      console.log('IQ: ', item.quantity);
-      console.log('ICQ: ', item.cartQuantity);
       item.quantity += item.cartQuantity;
       dispatch(updateItem(item));
     });

@@ -2,24 +2,36 @@
   width: 100%;
   border-bottom: 1px solid black;
   display: flex;
-  padding: 20px;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   font-weight: bold;
+  padding: 10px;
 }
 .cart_product .cart_product_image {
-  width: 20%;
+  padding-left: 10px;
 }
 .cart_product .cart_product_image img {
   width: 120px;
 }
 .cart_product .cart_product_info {
-  width: 50%;
+  margin: 0;
+  width: 100%;
   padding: 0 30px;
-  vertical-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 .cart_product .cart_product_info .cart_product_buttons, .cart_product .cart_product_info p {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.cart_product .item_stats {
+  display: flex;
+  flex-direction: row;
   width: 100%;
 }
 

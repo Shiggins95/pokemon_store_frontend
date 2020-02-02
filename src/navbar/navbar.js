@@ -1,18 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../styles/navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-const NavBar = props => {
-  // const { auth } = props;
-  const [displayNav, setDisplayNav] = useState();
+import { hideCart, logout, updateNav } from '../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutSession } from '../helpers/Helpers';
 
-  const className = displayNav ? 'navbar show' : 'navbar hide';
-  // const color = displayNav ? 'black' : 'white';
+const NavBar = props => {
+  const dispatch = useDispatch();
+  const display = useSelector(state => state.nav);
+  const showCart = useSelector(state => state.cart.display);
+  const auth = useSelector(state => state.auth);
+
+  const className = display ? 'navbar show' : 'navbar hide';
   const showMenu = event => {
-    setDisplayNav(!displayNav);
+    dispatch(updateNav());
+    if (showCart) {
+      dispatch(hideCart());
+    }
   };
+
+  const handleLogout = () => {
+    dispatch(logout());
+    logoutSession();
+    dispatch(updateNav());
+  };
+
   return (
     <div className="navbar_container">
       <div className="icon">
@@ -28,9 +43,15 @@ const NavBar = props => {
         <Link to="/store_home" className="link" onClick={showMenu}>
           Shop Products
         </Link>
-        <Link to="/login" id="log_in_out_button" className="link" onClick={showMenu}>
-          Login
-        </Link>
+        {!auth ? (
+          <Link to="/login" id="log_in_out_button" className="link" onClick={showMenu}>
+            Login
+          </Link>
+        ) : (
+          <Link to="/login" id="log_in_out_button" onClick={handleLogout} className="link">
+            Log Out
+          </Link>
+        )}
       </div>
     </div>
   );
@@ -38,8 +59,6 @@ const NavBar = props => {
 
 NavBar.propTypes = {
   auth: PropTypes.bool
-  // displayNav: PropTypes.bool,
-  // setDisplayNav: PropTypes.func
 };
 
 export default NavBar;

@@ -91,8 +91,15 @@ export const clearCart = () => {
 };
 
 export const updateItem = item => {
+  // console.log('UPDATING');
   return {
     type: 'UPDATE_ITEM',
     item
+  };
+};
+
+export const updateNav = () => {
+  return {
+    type: 'UPDATE_NAVBAR'
   };
 };

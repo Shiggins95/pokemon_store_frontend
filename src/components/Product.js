@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/product.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, showCart, setItems, setFilteredItems, filterItems, addFilter } from '../redux/actions';
+import { addToCart, showCart, setFilteredItems, filterItems } from '../redux/actions';
 import { Link } from 'react-router-dom';
 
 const Product = props => {
@@ -10,18 +10,13 @@ const Product = props => {
   const dispatch = useDispatch();
   const { items, filteredItems, filters } = useSelector(state => state.items);
   const handleClick = event => {
-    console.log(item);
-    console.log('ITEM PROD', item);
-    console.log('ITEM QTY PROD', item.quantity);
-    console.log('ITEM S QTY PROD', item.startingQuantity);
-    console.log('calc: ', parseInt(item.startingQuantity, 10) - parseInt(item.quantity, 10));
     if (item.quantity > 1) {
       item.quantity -= 1;
       dispatch(addToCart(event.target.value, items));
       dispatch(showCart());
       dispatch(setFilteredItems(filteredItems));
     } else {
-      console.log(item);
+      // console.log(item);
       if (item.quantity === 1) {
         item.quantity -= 1;
         dispatch(addToCart(event.target.value, items));

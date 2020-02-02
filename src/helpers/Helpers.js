@@ -1,5 +1,4 @@
 import { filterItems, removeFilter, restoreItems } from '../redux/actions';
-import { useDispatch } from 'react-redux';
 
 /**
  * set window.local storage with auth credentials
@@ -26,7 +25,7 @@ export const isAuthenticated = () => {
   return expires_at > currentDate;
 };
 
-export const logOut = () => {
+export const logoutSession = () => {
   window.localStorage.removeItem('token_id');
   window.localStorage.removeItem('expires_at');
 };
@@ -34,8 +33,6 @@ export const logOut = () => {
 export const totalCartQuantity = items => {
   let cartQuantity = 0;
   items.forEach(item => {
-    // console.log(item.cartQuantity);
-    // console.log(typeof item.cartQuantity);
     cartQuantity += item.cartQuantity;
   });
   return cartQuantity;
@@ -62,8 +59,8 @@ export const getFilteredItems = (items, filters) => {
       sortIndex = index;
     }
   });
-  console.log(filters[sortIndex]);
-  console.log(sortingExists);
+  // console.log(filters[sortIndex]);
+  // console.log(sortingExists);
   let newFilters = filters;
   // if 'oos' filter then filter any that have 0 quantity, then filter based on the other filters
   if (sortingExists && sortIndex !== false) {
@@ -73,10 +70,10 @@ export const getFilteredItems = (items, filters) => {
         newFilters = filters.filter(filter => filter !== 'default');
         break;
       case 'price_desc':
-        console.log('case 1', newFilters);
+        // console.log('case 1', newFilters);
         items = items.sort((item1, item2) => item2.price - item1.price);
         newFilters = filters.filter(filter => filter !== 'price_desc');
-        console.log('case 2', newFilters);
+        // console.log('case 2', newFilters);
         break;
       case 'price_asc':
         items = items.sort((item1, item2) => item1.price - item2.price);
@@ -91,7 +88,7 @@ export const getFilteredItems = (items, filters) => {
     return { filteredItems: items, newFilters };
   }
 
-  console.log('FILTERS', newFilters);
+  // console.log('FILTERS', newFilters);
   items.forEach(item => {
     if (newFilters.indexOf('oos') !== -1) {
       if (item.quantity > 0) {

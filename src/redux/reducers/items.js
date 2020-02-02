@@ -28,11 +28,11 @@ const itemsReducer = (state = startingState, action) => {
       filtered.map(item => {
         if (item.name === action.item.name) {
           item = action.item;
-          console.log('item name: ', item);
         }
         return item;
       });
-      return { ...state, filteredItems: filtered };
+      // console.log(newItems);
+      return { ...state, filteredItems: newItems };
     default:
       return state;
   }
