@@ -21,6 +21,7 @@ const OutOfStockFilter = props => {
     } else {
       event.target.style.background = 'rgb(12, 185, 255)';
       event.target.style.borderColor = 'rgba(12, 238, 255, 1)';
+      event.target.style.color = 'rgba(12, 238, 255, 1)';
       event.target.innerText = 'X';
       dispatch(addFilter('oos'));
       dispatch(filterItems());

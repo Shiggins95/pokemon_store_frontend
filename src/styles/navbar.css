@@ -1,6 +1,4 @@
 .fa_menu_bars {
-  color: #0cb9ff;
-  padding: 0 1px;
   -webkit-transform: scale(1.5);
   -moz-transform: scale(1.5);
   -ms-transform: scale(1.5);
@@ -11,6 +9,8 @@
   -ms-transition: 0.2s ease;
   -o-transition: 0.2s ease;
   transition: 0.2s ease;
+  color: #0cb9ff;
+  padding: 0 1px;
   position: fixed;
   top: 15px;
   left: 25px;
@@ -22,14 +22,14 @@
 }
 
 .fa_cart {
-  position: absolute;
-  right: 25px;
-  top: 15px;
   -webkit-transform: scale(1.5);
   -moz-transform: scale(1.5);
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
   transform: scale(1.5);
+  position: absolute;
+  right: 25px;
+  top: 15px;
   color: #0cb9ff;
 }
 

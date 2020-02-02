@@ -11,7 +11,7 @@ const Error = props => {
         <FontAwesomeIcon icon={faArrowLeft} id="fa_back_button" onClick={() => onClick(location)} />
       </div>
       <p>{reason}</p>
-      <button onClick={() => onClick('LOGIN')}>Try Again</button>
+      <button onClick={() => onClick(location)}>Try Again</button>
     </div>
   );
 };

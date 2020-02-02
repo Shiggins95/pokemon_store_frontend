@@ -22,6 +22,7 @@
     @include flexCenterCol();
   }
   #inner_button{
+    @include fastTransition();
     width: 300px;
     margin: 5px 0;
     padding: 10px 0;
@@ -29,13 +30,15 @@
     background: $primary_color;
     font-size: 0.9em  ;
     border-radius: 5px;
-    border: 1px solid white;
-    @include fastTransition();
+    border: 1px solid $secondary_color;
     font-weight: bold;
-    color: white;
+    color: $secondary_color;
     &:hover{
-      @include buttonHover();
+      //@include buttonHover();
+      background: $secondary_color;
       border: 1px solid $third_color;
+      color: $third_color;
+      cursor: pointer;
     }
     &:focus{
       outline: none;

@@ -1,9 +1,9 @@
 @import "./mixins";
 @import "./variables";
 .cart_product{
+  @include flexCenterRow;
   width: 100%;
   border-bottom: 1px solid black;
-  @include flexCenterRow;
   justify-content: space-evenly;
   font-weight: bold;
   padding: 10px;
@@ -22,7 +22,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    //border: 1px solid black;
     .cart_product_buttons, p{
       width: 100%;
       padding: 0;
@@ -30,8 +29,7 @@
     }
   }
   .item_stats{
-    display: flex;
-    flex-direction: row;
+    @include flexCenterRow;
     width: 100%;
   }
 }

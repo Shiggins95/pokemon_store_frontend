@@ -1,10 +1,10 @@
 #login_container {
-  min-height: 100vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
 }
 #login_container .display_container {
   background: rgba(12, 238, 255, 0.8);
@@ -19,6 +19,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: flex;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -37,13 +38,13 @@
   opacity: 0.8;
 }
 #login_container .display_container div input, #login_container .display_container form input {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   width: 80%;
   height: 40px;
   border: 1px solid #0cb9ff;
   margin: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
   text-align: center;
   z-index: 100;
 }
@@ -54,33 +55,35 @@
   color: #0cb9ff;
 }
 #login_container .display_container .checkbox {
-  width: 80%;
-  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 80%;
+  height: auto;
+  display: flex;
 }
 #login_container .display_container .checkbox div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   font-size: 0.8em;
   display: flex;
   text-align: center;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 #login_container .display_container .checkbox div input {
   margin-left: calc(50% - 10px);
 }
 #login_container .display_container #login_submit {
-  background: #0cb9ff;
-  color: #0ceeff;
   -webkit-transition: 0.2s ease;
   -moz-transition: 0.2s ease;
   -ms-transition: 0.2s ease;
   -o-transition: 0.2s ease;
   transition: 0.2s ease;
+  background: #0cb9ff;
+  color: #0ceeff;
   font-size: 1em;
 }
 #login_container .display_container #login_submit:hover {
@@ -94,16 +97,20 @@
   width: 50vw;
 }
 #login_container .display_container .back_button #fa_back_button {
-  position: absolute;
-  top: 25px;
-  left: 25px;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
   transform: scale(1.5);
-  color: #0cb9ff;
   -webkit-transition: 0.2s ease;
   -moz-transition: 0.2s ease;
   -ms-transition: 0.2s ease;
   -o-transition: 0.2s ease;
   transition: 0.2s ease;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  color: #0cb9ff;
   z-index: 100;
 }
 #login_container .display_container .back_button #fa_back_button:hover {
@@ -111,6 +118,14 @@
   color: white;
 }
 #login_container .display_container button {
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   width: 250px;
   height: 50px;
   background: #0cb9ff;
@@ -118,11 +133,6 @@
   margin: 10px 0;
   color: #0ceeff;
   font-size: 1.1em;
-  -webkit-transition: 0.2s ease;
-  -moz-transition: 0.2s ease;
-  -ms-transition: 0.2s ease;
-  -o-transition: 0.2s ease;
-  transition: 0.2s ease;
   z-index: 100;
 }
 #login_container .display_container button:hover {

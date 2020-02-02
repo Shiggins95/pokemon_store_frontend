@@ -2,10 +2,10 @@
 @import "./mixins";
 
 .fa_menu_bars{
-  color: $secondary_color;
-  padding: 0 1px;
   @include scale(1.5);
   @include fastTransition();
+  color: $secondary_color;
+  padding: 0 1px;
   position: fixed;
   top: 15px;
   left: 25px;
@@ -16,10 +16,10 @@
   }
 }
 .fa_cart{
+  @include scale(1.5);
   position: absolute;
   right: 25px;
   top: 15px;
-  @include scale(1.5);
   color: $secondary_color;
 }
 .navbar_container{

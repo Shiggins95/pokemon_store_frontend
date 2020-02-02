@@ -29,6 +29,11 @@
   align-items: center;
 }
 .product_container #inner_button {
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
   width: 300px;
   margin: 5px 0;
   padding: 10px 0;
@@ -36,20 +41,15 @@
   background: rgba(12, 238, 255, 0.8);
   font-size: 0.9em;
   border-radius: 5px;
-  border: 1px solid white;
-  -webkit-transition: 0.2s ease;
-  -moz-transition: 0.2s ease;
-  -ms-transition: 0.2s ease;
-  -o-transition: 0.2s ease;
-  transition: 0.2s ease;
+  border: 1px solid #0cb9ff;
   font-weight: bold;
-  color: white;
+  color: #0cb9ff;
 }
 .product_container #inner_button:hover {
-  cursor: pointer;
-  border-color: white;
-  color: white;
+  background: #0cb9ff;
   border: 1px solid #0ceeff;
+  color: #0ceeff;
+  cursor: pointer;
 }
 .product_container #inner_button:focus {
   outline: none;

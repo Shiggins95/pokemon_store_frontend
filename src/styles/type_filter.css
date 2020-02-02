@@ -32,7 +32,7 @@
   letter-spacing: 1px;
   margin: 5px;
   border: 1px solid #0cb9ff;
-  color: white;
+  color: #0cb9ff;
   background: #0ceeff;
   width: 40%;
   height: 30px;
@@ -50,6 +50,7 @@
 .type_filter .filters .clicked {
   border-color: #0ceeff;
   background: #0cb9ff;
+  color: #0ceeff;
 }
 
 /*# sourceMappingURL=type_filter.css.map */

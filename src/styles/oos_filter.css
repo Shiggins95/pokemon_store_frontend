@@ -7,11 +7,11 @@
   height: 200px;
 }
 .oos_filter .filters {
-  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100px;
 }
 .oos_filter .filters .checkbox {
   width: 20px;

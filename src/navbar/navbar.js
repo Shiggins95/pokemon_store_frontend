@@ -34,9 +34,6 @@ const NavBar = props => {
         <FontAwesomeIcon icon={faBars} className="fa_menu_bars" onClick={showMenu} data-testid="navbar-event-firer" />
       </div>
       <div className={className} data-testid="navbar-display">
-        <Link to="/cart ">
-          <FontAwesomeIcon icon={faShoppingCart} className="fa_cart" onClick={showMenu} />
-        </Link>
         <Link to="/" className="link" onClick={showMenu}>
           Home
         </Link>

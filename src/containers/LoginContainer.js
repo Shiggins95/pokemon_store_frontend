@@ -5,7 +5,7 @@ import { login, logout } from '../redux/actions';
 import { useSelector, useDispatch } from 'react-redux';
 import DisplayOptions from '../components/DisplayOptions';
 
-function LoginContainer() {
+const LoginContainer = (props) => {
   const dispatch = useDispatch();
   const auth = useSelector(state => state.auth);
   const [stage, setStage] = useState(auth ? 'LOGGED_IN' : 'SELECT');
@@ -73,6 +73,6 @@ function LoginContainer() {
       </div>
     </div>
   );
-}
+};
 
 export default LoginContainer;

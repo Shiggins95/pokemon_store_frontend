@@ -19,7 +19,7 @@ const Create = props => {
         <div className="checkbox">
           <div className="label">
             <label htmlFor="ts_cs_checkbox">
-              I have read and I agree to the{' '}
+              I have read and I agree to the{' '}<br/>
               <Link to="/ts_and_cs" target="_blank">
                 Terms and Conditions
               </Link>
@@ -29,7 +29,7 @@ const Create = props => {
             <input type="checkbox" id="ts_cs_checkbox" name="ts_cs_checkbox" required />
           </div>
         </div>
-        <input type="submit" id="login_submit" />
+        <input type="submit" id="login_submit" value="Create Account" />
       </form>
     </div>
   );

@@ -5,8 +5,8 @@
   width: 30%;
   height: 200px;
   .filters{
-    height: 100px;
     @include flexCenterCol();
+    height: 100px;
     .checkbox{
       width: 20px;
       height: 20px;

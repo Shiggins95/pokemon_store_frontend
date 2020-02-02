@@ -15,7 +15,7 @@ const Login = props => {
         <input type="email" id="email" />
         <label htmlFor="password">Password</label>
         <input type="text" id="password" />
-        <input type="submit" id="login_submit" />
+        <input type="submit" id="login_submit" value="Login" />
       </form>
     </div>
   );
