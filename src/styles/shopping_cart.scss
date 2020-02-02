@@ -1,10 +1,11 @@
-$primary_color: rgba(12, 238, 255, 0.8);
-$third_color: rgba(12, 238, 255, 1);
-$secondary_color: rgb(12, 185, 255);
+@import "./variables";
+@import "./mixins";
 .shopping_cart {
   z-index: 100;
   //width: 400px;
   .shopping_cart_container {
+    @include flexCenterCol();
+    justify-content: flex-start;
     padding-top: 60px;
     z-index: 100;
     overflow-y: scroll;
@@ -14,75 +15,49 @@ $secondary_color: rgb(12, 185, 255);
     top: 0;
     transition: 0.5s ease;
     background: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background: $primary_color;
     border-left: 5px solid $secondary_color;
   }
   #clear_cart_button{
+    @include borderRadius(5px);
+    @include fastTransition();
     color: $third_color;
     font-weight: bold;
     position: fixed;
     top: 10px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     width: 300px;
     height: 40px;
     z-index: 101;
     background: $secondary_color;
     border: 1px solid $third_color;
-    -webkit-transition: 0.2s ease;
-    -moz-transition: 0.2s ease;
-    -ms-transition: 0.2s ease;
-    -o-transition: 0.2s ease;
-    transition: 0.2s ease;
     &:hover{
-      cursor: pointer;
-      color: white;
-      border-color: white;
+      @include buttonHover();
     }
     &:active{
       outline: none;
     }
   }
   .cart_button{
+    @include flexCenterRow();
+    @include slowTransition();
     background: $secondary_color;
     position: fixed;
     padding: 10px;
     color: $third_color;
     top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -webkit-transition: 0.5s ease;
-    -moz-transition: 0.5s ease;
-    -ms-transition: 0.5s ease;
-    -o-transition: 0.5s ease;
-    transition: 0.5s ease;
     width: 50px;
     height: 50px;
     #fa_cart_button{
-      -webkit-transform: scale(2);
-      -moz-transform: scale(2);
-      -ms-transform: scale(2);
-      -o-transform: scale(2);
-      transform: scale(2);
+      @include scale(2);
     }
     .amount_in_cart{
+      @include borderRadius(50%);
+      @include flexCenterCol();
       padding: 1px;
       position: absolute;
       color: $third_color;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%;
       width: 20px;
       height: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       border: 1px solid $third_color;
       background: black;
       right: 5px;
