@@ -1,19 +1,11 @@
-$primary_color: rgba(12, 238, 255, 0.8);
-$third_color: rgba(12, 238, 255, 1);
-$secondary_color: rgb(12, 185, 255);
+@import "./variables";
+@import "./mixins";
+
 .fa_menu_bars{
   color: $secondary_color;
   padding: 0 1px;
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  transform: scale(1.5);
-  -webkit-transition: 0.2s ease;
-  -moz-transition: 0.2s ease;
-  -ms-transition: 0.2s ease;
-  -o-transition: 0.2s ease;
-  transition: 0.2s ease;
+  @include scale(1.5);
+  @include fastTransition();
   position: fixed;
   top: 15px;
   left: 25px;
@@ -27,44 +19,26 @@ $secondary_color: rgb(12, 185, 255);
   position: absolute;
   right: 25px;
   top: 15px;
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  transform: scale(1.5);
+  @include scale(1.5);
   color: $secondary_color;
 }
 .navbar_container{
   .navbar{
+    @include slowTransition();
+    @include flexCenterCol();
     overflow-y: scroll;
     z-index: 99;
     position: fixed;
     top: 0;
     background: $primary_color;
     border-right: 5px solid $secondary_color;
-    -webkit-transition: 0.5s ease;
-    -moz-transition: 0.5s ease;
-    -ms-transition: 0.5s ease;
-    -o-transition: 0.5s ease;
-    transition: 0.5s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     width: 20vw;
     .link {
+      @include borderRadius(5px);
+      @include fastTransition();
       color: $primary_color;
       text-decoration: none;
-      -webkit-border-radius: 5px;
-      font-weight: bold;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-      -webkit-transition: 0.2s ease;
-      -moz-transition: 0.2s ease;
-      -ms-transition: 0.2s ease;
-      -o-transition: 0.2s ease;
-      transition: 0.2s ease;
       width: 90%;
       padding: 20px 0;
       margin: 5px 0;
@@ -72,16 +46,13 @@ $secondary_color: rgb(12, 185, 255);
       background: $secondary_color;
       border: 1px solid transparent;
       &:hover{
-        color: white;
-        border-color: white;
+        @include buttonHover();
       }
     }
     #log_in_out_button{
+      @include borderRadius(5px);
       position: absolute;
       bottom: 50px;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
       width: 80%;
       padding: 10px 0;
     }
