@@ -25,7 +25,7 @@ const itemsReducer = (state = startingState, action) => {
       return { ...state, filters: filters.filter(filter => filter !== action.filter) };
     case 'UPDATE_ITEM':
       const filtered = state.filteredItems;
-      filtered.map(item => {
+      const newItems = filtered.map(item => {
         if (item.name === action.item.name) {
           item = action.item;
         }
