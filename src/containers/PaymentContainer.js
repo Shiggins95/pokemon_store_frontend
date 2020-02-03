@@ -73,15 +73,13 @@ PaymentContainer.propTypes = {};
 
 export default PaymentContainer;
 
+// needs to be done here so the styling of the stripe checkout button is changed by the time the content renders
 window.addEventListener('DOMContentLoaded', event => {
   const el = document.querySelector('.StripeCheckout');
   console.log(el);
   const span = el.firstChild;
   console.log(span);
   span.style.display = 'none';
-  // el.style.background = 'red';
-  // el.style.width = '100px';
-  // el.style.height = '50px';
   el.style = '';
   el.id = 'hide';
   el.innerText = 'Pay Now';
