@@ -14,7 +14,7 @@
   padding: 20px;
 }
 .product_container img {
-  width: 300px;
+  width: 15vw;
 }
 .product_container h3 {
   margin: 5px 0;
@@ -34,7 +34,7 @@
   -ms-transition: 0.2s ease;
   -o-transition: 0.2s ease;
   transition: 0.2s ease;
-  width: 300px;
+  width: 250px;
   margin: 5px 0;
   padding: 10px 0;
   text-decoration: none;
@@ -60,6 +60,12 @@
   -ms-transform: translateY(0.5px);
   -o-transform: translateY(0.5px);
   transform: translateY(0.5px);
+}
+
+@media (max-width: 1000px) {
+  img {
+    width: 250px;
+  }
 }
 
 /*# sourceMappingURL=product.css.map */

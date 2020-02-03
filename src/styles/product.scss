@@ -10,7 +10,7 @@
   font-size: 0.8em;
   padding: 20px;
   img{
-    width: 300px;
+    width: 15vw;
   }
   h3{
     margin: 5px 0;
@@ -23,7 +23,7 @@
   }
   #inner_button{
     @include fastTransition();
-    width: 300px;
+    width: 250px;
     margin: 5px 0;
     padding: 10px 0;
     text-decoration: none;
@@ -46,5 +46,11 @@
     &:active{
       @include buttonClick();
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  img{
+    width: 250px;
   }
 }

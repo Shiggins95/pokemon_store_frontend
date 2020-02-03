@@ -1,0 +1,32 @@
+@import "./mixins";
+@import "./variables";
+.payment_container {
+  width: 100vw;
+  height: 100vh;
+  @include flexCenterRow;
+  .pay_button {
+    width: 50%;
+    height: 50%;
+    @include flexCenterRow;
+    #hide {
+      font-size: 1.2em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      @include borderRadius(5px);
+      @include fastTransition();
+      color: $primary_color;
+      text-decoration: none;
+      width: 90%;
+      padding: 20px 0;
+      margin: 5px 0;
+      text-align: center;
+      background: $secondary_color;
+      border: 1px solid transparent;
+
+      &:hover {
+        @include buttonHover();
+      }
+
+    }
+  }
+}
