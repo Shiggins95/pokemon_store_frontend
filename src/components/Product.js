@@ -12,14 +12,14 @@ const Product = props => {
   const handleClick = event => {
     if (item.quantity > 1) {
       item.quantity -= 1;
-      dispatch(addToCart(event.target.value, items));
+      dispatch(addToCart(item, items));
       dispatch(showCart());
       dispatch(setFilteredItems(filteredItems));
     } else {
       // console.log(item);
       if (item.quantity === 1) {
         item.quantity -= 1;
-        dispatch(addToCart(event.target.value, items));
+        dispatch(addToCart(item, items));
         dispatch(setFilteredItems(filteredItems));
       }
       if (filters.indexOf('oos') !== -1) {
@@ -33,7 +33,7 @@ const Product = props => {
   if (item.quantity === 0) {
     quantityLabel = 'Out Of Stock';
     color = 'red';
-  } else if (item.quantity <= 15) {
+  } else if (item.quantity <= 10) {
     quantityLabel = 'Low Stock';
     color = 'orange';
   }
@@ -44,7 +44,7 @@ const Product = props => {
         <h3>{item.name}</h3>
         <h4>£{item.price}</h4>
         <p style={{ color }}>{quantityLabel}</p>
-        <h4>{item.quantity}</h4>
+        <h4>Available: {item.quantity >= 10 ? '10+' : item.quantity}</h4>
       </div>
       <div className="buttons">
         <button onClick={handleClick} value={item.id} id="inner_button" className="add_to_cart_inner">

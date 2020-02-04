@@ -19,7 +19,7 @@
         color: $secondary_color;
         font-weight: bold;
         margin: 5px 0;
-        z-index: 100;
+        z-index: $top_z_index;
         a{
           color: white;
           &:hover{
@@ -35,7 +35,7 @@
         border: 1px solid $secondary_color;
         margin: 5px;
         text-align: center;
-        z-index: 100;
+        z-index: $top_z_index;
       }
 
       p{
@@ -83,7 +83,7 @@
         top:25px;
         left: 25px;
         color: $secondary_color;
-        z-index: 100;
+        z-index: $top_z_index;
         &:hover{
           cursor: pointer;
           color: white;
@@ -101,7 +101,7 @@
       margin: 10px 0;
       color: $third_color;
       font-size: 1.1em;
-      z-index: 100;
+      z-index: $top_z_index;
       &:hover{
         @include buttonHover();
       }

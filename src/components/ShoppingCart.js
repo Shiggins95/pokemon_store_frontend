@@ -8,6 +8,7 @@ import { hideCart, showCart, clearCart, updateItem } from '../redux/actions';
 import { useDispatch } from 'react-redux';
 import CartProduct from './CartProduct';
 import { totalCartQuantity } from '../helpers/Helpers';
+import { Link } from 'react-router-dom';
 
 const ShoppingCart = props => {
   const dispatch = useDispatch();
@@ -22,27 +23,45 @@ const ShoppingCart = props => {
     });
     dispatch(clearCart());
   };
+
+  let itemsDiv =
+    items.length !== 0 ? (
+      items.map((item, index) => {
+        let productClassName = '';
+        if (index === 0) {
+          productClassName = 'first_cart_product';
+        } else if (index === items.length - 1) {
+          productClassName = 'last_cart_product';
+        }
+        return <CartProduct cartQuantity={cartQuantity} item={item} productClassName={productClassName} key={index} />;
+      })
+    ) : (
+      <div className="no_items_in_cart_container">
+        <div className="no_items_in_cart">
+          <p>Please add items to your cart.</p>
+          <FontAwesomeIcon icon={faShoppingCart} id="fa_cart_button" />
+        </div>
+      </div>
+    );
+
   return (
     <div className={`shopping_cart`} style={{ color: 'white' }}>
-      <div className={`cart_button ${labelClassName}`} onClick={() => dispatch(display ? hideCart() : showCart())}>
+      <div className={`show_cart_button ${labelClassName}`} onClick={() => dispatch(display ? hideCart() : showCart())}>
         <FontAwesomeIcon icon={display ? faWindowClose : faShoppingCart} id="fa_cart_button" />
         <div className="amount_in_cart">{cartQuantity}</div>
       </div>
       <div className={`shopping_cart_container ${className}`}>
-        <button id="clear_cart_button" onClick={clearShoppingCart}>
-          Clear Cart
-        </button>
-        {items.map((item, index) => {
-          let productClassName = '';
-          if (index === 0) {
-            productClassName = 'first_cart_product';
-          } else if (index === items.length - 1) {
-            productClassName = 'last_cart_product';
-          }
-          return (
-            <CartProduct cartQuantity={cartQuantity} item={item} productClassName={productClassName} key={index} />
-          );
-        })}
+        <div className="buttons">
+          <button id="clear_cart" className="cart_button" onClick={clearShoppingCart}>
+            Clear Cart
+          </button>
+          <Link to="/checkout" onClick={() => dispatch(hideCart())}>
+            <button id="checkout" className="cart_button">
+              Checkout
+            </button>
+          </Link>
+        </div>
+        {itemsDiv}
       </div>
     </div>
   );

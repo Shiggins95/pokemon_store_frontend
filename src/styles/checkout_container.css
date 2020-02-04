@@ -1,0 +1,37 @@
+#stripe_checkout_form {
+  display: flex;
+  flex-flow: row wrap;
+  width: 300px;
+}
+#stripe_checkout_form #card_number_element {
+  width: 70%;
+  border: 1px solid #0ceeff;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #0cb9ff;
+}
+#stripe_checkout_form #card_number_element input {
+  color: red;
+}
+#stripe_checkout_form #cvc_element {
+  width: 50px;
+  border: 1px solid #0ceeff;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #0cb9ff;
+}
+#stripe_checkout_form #expiry_element {
+  width: 50px;
+  border: 1px solid #0ceeff;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #0cb9ff;
+}
+
+/*# sourceMappingURL=checkout_container.css.map */

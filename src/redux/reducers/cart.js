@@ -14,9 +14,7 @@ const cartReducer = (state = startingState, action) => {
 
       // get item to add by filtering items in the overall items array and returning the one that matches the itemId
       // passed in via action
-      const itemToAdd = action.items.filter(item => {
-        return item.id.toString() === action.itemId.toString();
-      })[0];
+      const itemToAdd = action.item;
       // check for localstorage to update
       const currentStorage = localStorage.getItem('shopping_cart');
       let parsedStorage;
@@ -35,6 +33,8 @@ const cartReducer = (state = startingState, action) => {
       // add items from local stoage if they exist
       if (parsedStorage) {
         parsedStorage.forEach(item => {
+          console.log(item);
+          console.log(itemToAdd);
           if (item.id.toString() === itemToAdd.id.toString()) {
             item.cartQuantity += 1;
             foundItem = true;
@@ -64,12 +64,12 @@ const cartReducer = (state = startingState, action) => {
         const currentcartQuantity = item.cartQuantity;
         // console.log('CURRENT ITEM: ', item);
         // console.log('ITEM ID', action.itemId);
-        if (currentcartQuantity > 1 && item.id.toString() === action.itemId.toString()) {
+        if (currentcartQuantity > 1 && item.id.toString() === action.item.id.toString()) {
           item.cartQuantity -= 1;
           return item;
         }
         // else remove from cart
-        return item.id.toString() !== action.itemId.toString();
+        return item.id.toString() !== action.item.id.toString();
       });
 
       // return new state and set local storage

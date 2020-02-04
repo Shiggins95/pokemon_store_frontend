@@ -7,7 +7,6 @@ import './styles/app.css';
 import StoreContainer from './containers/StoreContainer';
 import { useSelector } from 'react-redux';
 import ShoppingCart from './components/ShoppingCart';
-import CheckoutContainer from './containers/CheckoutContainer';
 import PaymentContainer from './containers/PaymentContainer';
 
 function App() {
@@ -25,8 +24,7 @@ function App() {
         <div className="routes_container">
           <Route exact path="/login" component={LoginContainer} />
           <Route exact path="/store_home" component={StoreContainer} />
-          <Route exact path="/checkout" component={CheckoutContainer} />
-          <Route exact path="/make_payment" component={PaymentContainer} />
+          <Route exact path="/checkout" component={PaymentContainer} />
         </div>
       </div>
     </Router>

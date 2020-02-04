@@ -9,7 +9,7 @@
   position: fixed;
   top: 15px;
   left: 25px;
-  z-index: 100;
+  z-index: $top_z_index + 1;
   &:hover{
     opacity: 0.8;
     cursor: pointer;
@@ -24,10 +24,11 @@
 }
 .navbar_container{
   .navbar{
+    font-weight: bold;
     @include slowTransition();
     @include flexCenterCol();
     overflow-y: scroll;
-    z-index: 99;
+    z-index: $top_z_index;
     position: fixed;
     top: 0;
     background: $primary_color;

@@ -1,24 +1,46 @@
 @import "./mixins";
 @import "./variables";
 .payment_container {
+  @include flexCenterRow;
   width: 100vw;
   height: 100vh;
-  @include flexCenterRow;
+  .inner_payment_container, .inner_totals_container{
+    @include boxShadow;
+    @include flexCenterCol;
+    padding: 20px 0;
+    justify-content:space-between;
+    height: 600px;
+    overflow-y: scroll;
+    width: 500px;
+    margin: 0 20px;
+    .first{
+      border-top: 1px solid black;
+    }
+  }
+  .inner_totals_container{
+    justify-content: center;
+  }
   .pay_button {
-    width: 50%;
-    height: 50%;
+    //form{
+    //  width: 100%;
+    //  @include flexCenterCol;
+    //  #stripe_card_element{
+    //    //background: red;
+    //    width: 200px;
+    //  }
+    //}
+    position: relative;
     @include flexCenterRow;
     #hide {
       font-size: 1.2em;
       font-weight: bold;
-      letter-spacing: 2px;
+      letter-spacing: 2px;;
       @include borderRadius(5px);
       @include fastTransition();
       color: $primary_color;
       text-decoration: none;
-      width: 90%;
+      width: 400px;
       padding: 20px 0;
-      margin: 5px 0;
       text-align: center;
       background: $secondary_color;
       border: 1px solid transparent;
@@ -29,4 +51,45 @@
 
     }
   }
+  .click_stopper_container{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $top_z_index - 1;
+    .click_stopper{
+      width: 800px;
+      height: 500px;
+      background: $third_color;
+      color: $secondary_color;
+      margin-left: calc((100vw - 800px) / 2);
+      margin-top: calc((100vh - 500px) / 2);
+      @include flexCenterCol;
+      .link{
+        @include borderRadius(5px);
+        @include fastTransition();
+        color: $primary_color;
+        text-decoration: none;
+        width: 300px;
+        padding: 20px 0;
+        margin: 5px 0;
+        text-align: center;
+        background: $secondary_color;
+        border: 1px solid transparent;
+        &:hover{
+          @include buttonHover();
+        }
+      }
+    }
+  }
+
+  .hide{
+    display: none;
+  }
+  .display{
+    display: block;
+  }
+
 }

@@ -10,18 +10,18 @@ export const logout = () => {
   };
 };
 
-export const addToCart = (itemId, items) => {
+export const addToCart = (item, items) => {
   return {
     type: 'ADD_TO_CART',
-    itemId,
+    item,
     items
   };
 };
 
-export const removeFromCart = itemId => {
+export const removeFromCart = item => {
   return {
     type: 'REMOVE_FROM_CART',
-    itemId
+    item
   };
 };
 

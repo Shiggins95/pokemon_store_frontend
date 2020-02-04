@@ -3,9 +3,13 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 import '../styles/payment_container.css';
+import CartProduct from '../components/CartProduct';
+import { Link } from 'react-router-dom';
+import { loadStripe } from '@stripe/stripe-js';
+import { StripeProvider, Elements } from 'react-stripe-elements';
+import CheckoutContainer from './CheckoutContainer';
 
 const PaymentContainer = props => {
-  const ref = React.createRef();
   const { items } = useSelector(state => state.cart);
   const getTotals = () => {
     let total = 0;
@@ -31,11 +35,17 @@ const PaymentContainer = props => {
 
   const handleToken = async (token, addresses) => {
     console.log({ token, addresses });
+    const newItems = items;
+    newItems.forEach(item => {
+      item.user = {};
+    });
     const requestObj = {};
     buildObj(token, requestObj);
     buildObj(addresses, requestObj);
-    requestObj.ya_boys_products = items;
-    requestObj.price = 1881.57 * 100;
+    requestObj.ya_boys_products = newItems;
+
+    // convert £s to pence for stripe to handleI
+    requestObj.price = parseInt((totals * 100).toFixed(2), 10);
 
     console.log(requestObj);
 
@@ -49,21 +59,48 @@ const PaymentContainer = props => {
     const res = response.ok ? response.json() : console.log('error: ', response);
     console.log(res);
   };
-  const handleClick = () => {
-    console.log(ref.current);
-  };
+
+  const displayClass = items.length === 0 ? 'display' : 'hide';
+  const stripePromise = loadStripe('pk_test_E1sB3HebuXKmr9Avr80VltJw00gh3Xkzpo');
   return (
     <div className="payment_container">
-      <div className="pay_button">
-        <StripeCheckout
-          token={handleToken}
-          stripeKey="pk_test_E1sB3HebuXKmr9Avr80VltJw00gh3Xkzpo"
-          billingAddress
-          shippingAddress
-          amount={totals * 100}
-          name={`Ya Boys Pokemart - Total: £${totals.toFixed(2)}`}
-          ref={ref}
-        />
+      <div className={`click_stopper_container ${displayClass}`}>
+        <div className="click_stopper">
+          <h2>Please add items to your basket</h2>
+          <Link to="/store_home" className="link">
+            Shop Products
+          </Link>
+        </div>
+      </div>
+      <div className="inner_payment_container">
+        <div className="items_info">
+          {items.map((item, index) => {
+            let className = index === 0 ? 'first_cart_product' : '';
+            return <CartProduct item={item} key={index} productClassName={className} />;
+          })}
+        </div>
+      </div>
+      <div className="inner_totals_container">
+        <div className="totals">
+          <p>Cart Total: £{totals.toFixed(2)}</p>
+        </div>
+        <div className="pay_button">
+          <StripeProvider apiKey="pk_test_E1sB3HebuXKmr9Avr80VltJw00gh3Xkzpo">
+            <Elements>
+              <CheckoutContainer items={items} cartTotal={totals}/>
+            </Elements>
+          </StripeProvider>
+          {/*<StripeCheckout*/}
+          {/*  token={handleToken}*/}
+          {/*  stripeKey="pk_test_E1sB3HebuXKmr9Avr80VltJw00gh3Xkzpo"*/}
+          {/*  billingAddress*/}
+          {/*  shippingAddress*/}
+          {/*  amount={totals * 100}*/}
+          {/*  name={`Ya Boys Pokemart - Total: £${totals.toFixed(2)}`}*/}
+          {/*>*/}
+          {/*  <button id="hide">Pay Now</button>*/}
+          {/*</StripeCheckout>*/}
+        </div>
       </div>
     </div>
   );
@@ -72,15 +109,3 @@ const PaymentContainer = props => {
 PaymentContainer.propTypes = {};
 
 export default PaymentContainer;
-
-// needs to be done here so the styling of the stripe checkout button is changed by the time the content renders
-window.addEventListener('DOMContentLoaded', event => {
-  const el = document.querySelector('.StripeCheckout');
-  console.log(el);
-  const span = el.firstChild;
-  console.log(span);
-  span.style.display = 'none';
-  el.style = '';
-  el.id = 'hide';
-  el.innerText = 'Pay Now';
-});

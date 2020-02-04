@@ -1,14 +1,34 @@
 .payment_container {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.payment_container .inner_payment_container, .payment_container .inner_totals_container {
+  -webkit-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  justify-content: space-between;
+  height: 600px;
+  overflow-y: scroll;
+  width: 500px;
+  margin: 0 20px;
+}
+.payment_container .inner_payment_container .first, .payment_container .inner_totals_container .first {
+  border-top: 1px solid black;
+}
+.payment_container .inner_totals_container {
+  justify-content: center;
 }
 .payment_container .pay_button {
-  width: 50%;
-  height: 50%;
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -28,9 +48,8 @@
   transition: 0.2s ease;
   color: rgba(12, 238, 255, 0.8);
   text-decoration: none;
-  width: 90%;
+  width: 400px;
   padding: 20px 0;
-  margin: 5px 0;
   text-align: center;
   background: #0cb9ff;
   border: 1px solid transparent;
@@ -39,6 +58,56 @@
   cursor: pointer;
   border-color: white;
   color: white;
+}
+.payment_container .click_stopper_container {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+.payment_container .click_stopper_container .click_stopper {
+  width: 800px;
+  height: 500px;
+  background: #0ceeff;
+  color: #0cb9ff;
+  margin-left: calc((100vw - 800px) / 2);
+  margin-top: calc((100vh - 500px) / 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.payment_container .click_stopper_container .click_stopper .link {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
+  color: rgba(12, 238, 255, 0.8);
+  text-decoration: none;
+  width: 300px;
+  padding: 20px 0;
+  margin: 5px 0;
+  text-align: center;
+  background: #0cb9ff;
+  border: 1px solid transparent;
+}
+.payment_container .click_stopper_container .click_stopper .link:hover {
+  cursor: pointer;
+  border-color: white;
+  color: white;
+}
+.payment_container .hide {
+  display: none;
+}
+.payment_container .display {
+  display: block;
 }
 
 /*# sourceMappingURL=payment_container.css.map */

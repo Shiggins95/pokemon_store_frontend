@@ -54,11 +54,11 @@
 }
 
 @mixin scale($property) {
-  -webkit-transform: scale($property);
-  -moz-transform: scale($property);
-  -ms-transform: scale($property);
-  -o-transform: scale($property);
-  transform: scale($property);
+  -webkit-transform: scale($property, $property);
+  -moz-transform: scale($property, $property);
+  -ms-transform: scale($property, $property);
+  -o-transform: scale($property, $property);
+  transform: scale($property, $property);
 }
 
 @mixin buttonClick() {

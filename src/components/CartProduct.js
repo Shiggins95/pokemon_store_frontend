@@ -8,13 +8,14 @@ import { useDispatch, useSelector } from 'react-redux';
 const CartProduct = props => {
   const { item, productClassName, cartQuantity } = props;
   const { items } = useSelector(state => state.items);
+  console.log('ITEMS: ', items);
   // console.log(items);
   const dispatch = useDispatch();
   const addItem = event => {
     // console.log('ITEMMMM: ', item);
     if (item.quantity > 0) {
       item.quantity -= 1;
-      dispatch(addToCart(event.target.value, items));
+      dispatch(addToCart(item, items));
       dispatch(updateItem(item));
     }
   };
@@ -23,17 +24,19 @@ const CartProduct = props => {
       dispatch(hideCart());
     }
     item.quantity += 1;
-    dispatch(removeFromCart(event.target.value, items));
+    dispatch(removeFromCart(item, items));
     dispatch(updateItem(item));
   };
 
   const removeItem = event => {
-    if (cartQuantity === 1) {
+    console.log(cartQuantity);
+    console.log(items);
+    if (cartQuantity === 1 || item.cartQuantity === cartQuantity) {
       dispatch(hideCart());
     }
     for (let i = item.cartQuantity; i > 0; i--) {
       item.quantity += 1;
-      dispatch(removeFromCart(event.target.value, items));
+      dispatch(removeFromCart(item, items));
     }
     dispatch(updateItem(item));
   };

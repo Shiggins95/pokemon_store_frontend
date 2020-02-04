@@ -28,7 +28,7 @@
   color: #0cb9ff;
   font-weight: bold;
   margin: 5px 0;
-  z-index: 100;
+  z-index: 5;
 }
 #login_container .display_container div label a, #login_container .display_container form label a {
   color: white;
@@ -46,7 +46,7 @@
   border: 1px solid #0cb9ff;
   margin: 5px;
   text-align: center;
-  z-index: 100;
+  z-index: 5;
 }
 #login_container .display_container div p, #login_container .display_container form p {
   font-weight: bold;
@@ -97,11 +97,11 @@
   width: 50vw;
 }
 #login_container .display_container .back_button #fa_back_button {
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  transform: scale(1.5);
+  -webkit-transform: scale(1.5, 1.5);
+  -moz-transform: scale(1.5, 1.5);
+  -ms-transform: scale(1.5, 1.5);
+  -o-transform: scale(1.5, 1.5);
+  transform: scale(1.5, 1.5);
   -webkit-transition: 0.2s ease;
   -moz-transition: 0.2s ease;
   -ms-transition: 0.2s ease;
@@ -111,7 +111,7 @@
   top: 25px;
   left: 25px;
   color: #0cb9ff;
-  z-index: 100;
+  z-index: 5;
 }
 #login_container .display_container .back_button #fa_back_button:hover {
   cursor: pointer;
@@ -133,7 +133,7 @@
   margin: 10px 0;
   color: #0ceeff;
   font-size: 1.1em;
-  z-index: 100;
+  z-index: 5;
 }
 #login_container .display_container button:hover {
   cursor: pointer;
