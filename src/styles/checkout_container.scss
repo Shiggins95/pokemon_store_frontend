@@ -1,34 +1,120 @@
 @import "./mixins";
 @import "./variables";
 #stripe_checkout_form{
+  color: $secondary_color;
   display: flex;
   flex-flow: row wrap;
-  width: 300px;
-  .stripe_card_element{
-  }
+  justify-content: center;
+  width: 350px;
+  .payment_customer_details {
+    //border: 1px solid black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    .email {
+      width: 100%;
+    }
 
-  #card_number_element{
-    width: 70%;
-    border: 1px solid $third_color;
-    padding: 5px;
-    @include borderRadius(5px);
-    background: $secondary_color;
-    input{
-      color: red;
+    .line1 {
+      width: 100%;
+      @include flexCenterCol;
+      align-items: flex-start;
+    }
+
+    .city_postcode {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      div {
+        margin: 0 20px;
+      }
+    }
+    .payment_input{
+      //border: 1px solid red;
+      margin: 5px 0;
+      @include flexCenterCol;
+      input {
+        padding: 10px 5px;
+        @include borderRadius(5px);
+        border: 1px solid $secondary_color;
+        background: $fourth_color;
+        color: $secondary_color;
+        font-weight: bold;
+      }
+      #payment_email{
+        width: 250px;
+      }
+      #payment_line1, #payment_line2{
+        width: 250px;
+      }
+      #payment_city, #payment_postal_code{
+        width: 100px;
+        //@include flexCenterCol;
+      }
+      #payment_country{
+        width: 260px;
+        background: $fourth_color;
+        border: 1px solid $secondary_color;
+        height: 30px;
+      }
+      #payment_postal_code{
+
+      }
     }
   }
-  #cvc_element{
-    width: 50px;
-    border: 1px solid $third_color;
-    padding: 5px;
-    @include borderRadius(5px);
-    background: $secondary_color;
+  .payment_info {
+    margin-top: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    .payment_input {
+      #card_number_element {
+        width: 250px;
+        border: 1px solid $third_color;
+        padding: 5px;
+        @include borderRadius(5px);
+        background: $fourth_color;
+      }
+
+      #cvc_element {
+        width: 50px;
+        border: 1px solid $third_color;
+        padding: 5px;
+        @include borderRadius(5px);
+        background: $fourth_color;
+      }
+
+      #expiry_element {
+        margin-right: 90px;
+        width: 100px;
+        border: 1px solid $third_color;
+        padding: 5px;
+        @include borderRadius(5px);
+        background: $fourth_color;
+      }
+    }
   }
-  #expiry_element{
-    width: 50px;
-    border: 1px solid $third_color;
-    padding: 5px;
+  button {
+    width: 265px;
+    padding: 10px 0;
+    margin-top: 10px;
     @include borderRadius(5px);
+    @include fastTransition;
     background: $secondary_color;
+    border: 1px solid $secondary_color;
+    color: $third_color;
+    font-weight: bold;
+    font-size: 1em;
+    &:hover{
+      @include buttonHover;
+    }
+    &:active{
+      @include buttonClick;
+    }
+    &:focus{
+      outline: none;
+    }
   }
 }

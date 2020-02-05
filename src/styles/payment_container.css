@@ -27,6 +27,9 @@
 .payment_container .inner_totals_container {
   justify-content: center;
 }
+.payment_container .inner_totals_container p {
+  color: #0cb9ff;
+}
 .payment_container .pay_button {
   position: relative;
   display: flex;

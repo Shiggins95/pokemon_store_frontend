@@ -1,37 +1,134 @@
 #stripe_checkout_form {
+  color: #0cb9ff;
   display: flex;
   flex-flow: row wrap;
-  width: 300px;
+  justify-content: center;
+  width: 350px;
 }
-#stripe_checkout_form #card_number_element {
-  width: 70%;
+#stripe_checkout_form .payment_customer_details {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+}
+#stripe_checkout_form .payment_customer_details .email {
+  width: 100%;
+}
+#stripe_checkout_form .payment_customer_details .line1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+}
+#stripe_checkout_form .payment_customer_details .city_postcode {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#stripe_checkout_form .payment_customer_details .city_postcode div {
+  margin: 0 20px;
+}
+#stripe_checkout_form .payment_customer_details .payment_input {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#stripe_checkout_form .payment_customer_details .payment_input input {
+  padding: 10px 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #0cb9ff;
+  background: rgba(12, 238, 255, 0.1);
+  color: #0cb9ff;
+  font-weight: bold;
+}
+#stripe_checkout_form .payment_customer_details .payment_input #payment_email {
+  width: 250px;
+}
+#stripe_checkout_form .payment_customer_details .payment_input #payment_line1, #stripe_checkout_form .payment_customer_details .payment_input #payment_line2 {
+  width: 250px;
+}
+#stripe_checkout_form .payment_customer_details .payment_input #payment_city, #stripe_checkout_form .payment_customer_details .payment_input #payment_postal_code {
+  width: 100px;
+}
+#stripe_checkout_form .payment_customer_details .payment_input #payment_country {
+  width: 260px;
+  background: rgba(12, 238, 255, 0.1);
+  border: 1px solid #0cb9ff;
+  height: 30px;
+}
+#stripe_checkout_form .payment_info {
+  margin-top: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+#stripe_checkout_form .payment_info .payment_input #card_number_element {
+  width: 250px;
   border: 1px solid #0ceeff;
   padding: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  background: #0cb9ff;
+  background: rgba(12, 238, 255, 0.1);
 }
-#stripe_checkout_form #card_number_element input {
-  color: red;
-}
-#stripe_checkout_form #cvc_element {
+#stripe_checkout_form .payment_info .payment_input #cvc_element {
   width: 50px;
   border: 1px solid #0ceeff;
   padding: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  background: #0cb9ff;
+  background: rgba(12, 238, 255, 0.1);
 }
-#stripe_checkout_form #expiry_element {
-  width: 50px;
+#stripe_checkout_form .payment_info .payment_input #expiry_element {
+  margin-right: 90px;
+  width: 100px;
   border: 1px solid #0ceeff;
   padding: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  background: rgba(12, 238, 255, 0.1);
+}
+#stripe_checkout_form button {
+  width: 265px;
+  padding: 10px 0;
+  margin-top: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+  transition: 0.2s ease;
   background: #0cb9ff;
+  border: 1px solid #0cb9ff;
+  color: #0ceeff;
+  font-weight: bold;
+  font-size: 1em;
+}
+#stripe_checkout_form button:hover {
+  cursor: pointer;
+  border-color: white;
+  color: white;
+}
+#stripe_checkout_form button:active {
+  -webkit-transform: translateY(0.5px);
+  -moz-transform: translateY(0.5px);
+  -ms-transform: translateY(0.5px);
+  -o-transform: translateY(0.5px);
+  transform: translateY(0.5px);
+}
+#stripe_checkout_form button:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=checkout_container.css.map */

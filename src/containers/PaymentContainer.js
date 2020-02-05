@@ -90,16 +90,6 @@ const PaymentContainer = props => {
               <CheckoutContainer items={items} cartTotal={totals}/>
             </Elements>
           </StripeProvider>
-          {/*<StripeCheckout*/}
-          {/*  token={handleToken}*/}
-          {/*  stripeKey="pk_test_E1sB3HebuXKmr9Avr80VltJw00gh3Xkzpo"*/}
-          {/*  billingAddress*/}
-          {/*  shippingAddress*/}
-          {/*  amount={totals * 100}*/}
-          {/*  name={`Ya Boys Pokemart - Total: £${totals.toFixed(2)}`}*/}
-          {/*>*/}
-          {/*  <button id="hide">Pay Now</button>*/}
-          {/*</StripeCheckout>*/}
         </div>
       </div>
     </div>

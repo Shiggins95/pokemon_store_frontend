@@ -19,16 +19,11 @@
   }
   .inner_totals_container{
     justify-content: center;
+    p{
+      color: $secondary_color;
+    }
   }
   .pay_button {
-    //form{
-    //  width: 100%;
-    //  @include flexCenterCol;
-    //  #stripe_card_element{
-    //    //background: red;
-    //    width: 200px;
-    //  }
-    //}
     position: relative;
     @include flexCenterRow;
     #hide {
