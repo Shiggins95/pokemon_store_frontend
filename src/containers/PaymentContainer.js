@@ -50,7 +50,7 @@ const PaymentContainer = props => {
     console.log(requestObj);
 
     const headers = { 'Content-Type': 'application/json' };
-    const response = await fetch('http://localhost:8080/api/payment/pay', {
+    const response = await fetch(`${process.env.REACT_APP_API}/api/payment/pay`, {
       method: 'POST',
       body: JSON.stringify(requestObj),
       headers

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51da55f8-5489-4d8c-b9e0-db706562ca89" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/CheckoutContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CheckoutContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/PaymentContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/PaymentContainer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,11 +28,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" column="55" lean-forward="true" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/CheckoutContainer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/PaymentContainer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="52" column="62" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,8 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>display</find>
-      <find>&amp;:hover</find>
       <find>borderRadius</find>
       <find>HEAD</find>
       <find>shopping_cart_container</find>
@@ -84,6 +107,8 @@
       <find>dispatch(show</find>
       <find>store_home</find>
       <find>stripe_card_element</find>
+      <find>process.env.R</find>
+      <find>localhost:8080</find>
     </findStrings>
     <replaceStrings>
       <replace>0.5s</replace>
@@ -134,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/styles/payment_container.scss" />
         <option value="$PROJECT_DIR$/src/helpers/CountryData.js" />
         <option value="$PROJECT_DIR$/src/styles/_variables.scss" />
-        <option value="$PROJECT_DIR$/src/containers/CheckoutContainer.js" />
         <option value="$PROJECT_DIR$/src/styles/checkout_container.scss" />
         <option value="$PROJECT_DIR$/src/components/login/Error.js" />
         <option value="$PROJECT_DIR$/src/components/DisplayOptions.js" />
@@ -151,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/components/ImageGallery.js" />
         <option value="$PROJECT_DIR$/src/components/ItemContainer.js" />
         <option value="$PROJECT_DIR$/src/components/login/LoggedIn.js" />
-        <option value="$PROJECT_DIR$/src/containers/PaymentContainer.js" />
         <option value="$PROJECT_DIR$/src/containers/StoreContainer.js" />
         <option value="$PROJECT_DIR$/src/components/filter/StoreFilters.js" />
         <option value="$PROJECT_DIR$/src/components/filter/filters/TypeFilter.js" />
@@ -160,6 +183,8 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/containers/CheckoutContainer.js" />
+        <option value="$PROJECT_DIR$/src/containers/PaymentContainer.js" />
       </list>
     </option>
   </component>
@@ -185,6 +210,17 @@
             <path>
               <item name="pokemon_store_frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="pokemon_store_frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokemon_store_frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokemon_store_frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokemon_store_frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokemon_store_frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -267,7 +303,7 @@
       <option name="presentableId" value="Default" />
       <updated>1579650728103</updated>
       <workItem from="1579650730833" duration="19513000" />
-      <workItem from="1580080043391" duration="110495000" />
+      <workItem from="1580080043391" duration="111531000" />
     </task>
     <servers />
   </component>
@@ -277,7 +313,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130008000" />
+    <option name="totallyTimeSpent" value="131044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -474,16 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/PaymentContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="91" column="27" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/payment_container.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -519,16 +545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-43">
           <caret line="70" column="28" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/CheckoutContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="87" column="48" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -704,6 +720,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="55" lean-forward="true" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/CheckoutContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/PaymentContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="52" column="62" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
