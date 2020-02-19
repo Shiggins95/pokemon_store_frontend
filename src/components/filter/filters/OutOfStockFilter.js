@@ -27,11 +27,29 @@ const OutOfStockFilter = props => {
       dispatch(filterItems());
     }
   };
+  const existsInFilters = filters.indexOf('oos') !== -1;
   return (
     <div className="oos_filter">
       <p>Hide out of stock</p>
       <div className="filters">
-        <div className="checkbox" onClick={handleClick} />
+        <div
+          className="checkbox"
+          onClick={handleClick}
+          style={
+            existsInFilters
+              ? {
+                  background: 'rgb(12, 185, 255)',
+                  borderColor: 'rgba(12, 238, 255, 1)',
+                  color: 'rgba(12, 238, 255, 1)'
+                }
+              : {
+                  background: 'rgba(12, 238, 255, 1)',
+                  borderColor: 'rgb(12, 185, 255)'
+                }
+          }
+        >
+          {existsInFilters ? 'X' : ''}
+        </div>
       </div>
     </div>
   );

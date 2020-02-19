@@ -67,7 +67,7 @@ const PaymentContainer = props => {
       <div className={`click_stopper_container ${displayClass}`}>
         <div className="click_stopper">
           <h2>Please add items to your basket</h2>
-          <Link to="/store_home" className="link">
+          <Link to="/" className="link">
             Shop Products
           </Link>
         </div>

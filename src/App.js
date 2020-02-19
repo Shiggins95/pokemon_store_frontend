@@ -8,10 +8,10 @@ import StoreContainer from './containers/StoreContainer';
 import { useSelector } from 'react-redux';
 import ShoppingCart from './components/ShoppingCart';
 import PaymentContainer from './containers/PaymentContainer';
+import ItemContainer from './components/ItemContainer';
 
 function App() {
   const auth = useSelector(state => state.auth);
-  // console.log('AUTH: ', auth);
   return (
     <Router>
       <div className="app_container">
@@ -22,9 +22,10 @@ function App() {
           <ShoppingCart />
         </div>
         <div className="routes_container">
+          <Route exact path="/" component={StoreContainer} />
           <Route exact path="/login" component={LoginContainer} />
-          <Route exact path="/store_home" component={StoreContainer} />
           <Route exact path="/checkout" component={PaymentContainer} />
+          <Route exact path="/item/:id" render={props => <ItemContainer {...props} />} />
         </div>
       </div>
     </Router>

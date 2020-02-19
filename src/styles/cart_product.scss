@@ -1,10 +1,9 @@
 @import "./mixins";
 @import "./variables";
 .cart_product{
-  @include flexCenterRow;
+  @include flexRowEven;
   width: 100%;
   border-bottom: 1px solid black;
-  justify-content: space-evenly;
   font-weight: bold;
   padding: 10px;
   .cart_product_image{

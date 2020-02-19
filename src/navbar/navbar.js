@@ -37,9 +37,6 @@ const NavBar = props => {
         <Link to="/" className="link" onClick={showMenu}>
           Home
         </Link>
-        <Link to="/store_home" className="link" onClick={showMenu}>
-          Shop Products
-        </Link>
         {!auth ? (
           <Link to="/login" id="log_in_out_button" className="link" onClick={showMenu}>
             Login

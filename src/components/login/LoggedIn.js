@@ -14,7 +14,7 @@ const LoggedIn = props => {
       <div className="logged_in">
         <p>Logged In</p>
         <button onClick={onClick}>Logout</button>
-        <Link to="/store_home">
+        <Link to="/">
           <button>Shop Products</button>
         </Link>
       </div>

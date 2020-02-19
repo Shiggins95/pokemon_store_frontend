@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Error = props => {
-  const { onClick, location, reason } = props;
+  const { onClick, location, reason, displayText } = props;
   return (
     <div className="wrong_email">
       <div className="back_button">
         <FontAwesomeIcon icon={faArrowLeft} id="fa_back_button" onClick={() => onClick(location)} />
       </div>
       <p>{reason}</p>
-      <button onClick={() => onClick(location)}>Try Again</button>
+      <button onClick={() => onClick(location)}>{displayText}</button>
     </div>
   );
 };
@@ -20,6 +20,7 @@ Error.propTypes = {
   onClick: PropTypes.func,
   location: PropTypes.string,
   reason: PropTypes.string,
+  displayText: PropTypes.string,
 };
 
 export default Error;

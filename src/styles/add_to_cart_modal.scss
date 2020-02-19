@@ -1,0 +1,9 @@
+@import "./variables";
+@import "./mixins";
+#add_to_cart_modal{
+  position: absolute;
+  height: 500px;
+  width: 1000px;
+  left: calc((100vw - 1000px) / 2);
+  background: $secondary_color;
+}

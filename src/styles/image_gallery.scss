@@ -1,0 +1,25 @@
+@import "./mixins";
+@import "./variables";
+#image_gallery{
+  @include flexCenterCol;
+  width: 100%;
+  height: 100%;
+  .showcase{
+    @include flexCenterCol;
+    img{
+      width: 50%;
+    }
+  }
+  .other_images{
+    margin-top: 20px;
+    img{
+      @include fastTransition;
+      width: 100px;
+      margin: 5px;
+      &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+}

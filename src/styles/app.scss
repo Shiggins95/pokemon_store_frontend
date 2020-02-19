@@ -1,9 +1,6 @@
 $primary_color: rgb(12, 238, 255);
 $secondary_color: rgb(12, 185, 255);
 .app_container{
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
   min-height: 100vh;
   //background: $primary_color;
   .routes_container{

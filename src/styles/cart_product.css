@@ -1,11 +1,10 @@
 .cart_product {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
   border-bottom: 1px solid black;
-  justify-content: space-evenly;
   font-weight: bold;
   padding: 10px;
 }

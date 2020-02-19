@@ -29,13 +29,21 @@ const TypeFilter = props => {
     }
   };
 
+  const existsInFilters = filter => {
+    return filters.indexOf(filter) !== -1;
+  };
+
   return (
     <div className="type_filter">
       <p>Filter by categories</p>
       <div className="filters">
         {typeFilters.map((filter, index) => {
           return (
-            <div key={index} onClick={handleClick} className={filter.type}>
+            <div
+              key={index}
+              onClick={handleClick}
+              className={existsInFilters(filter.type) ? `${filter.type} clicked` : filter.type}
+            >
               {filter.label}
             </div>
           );

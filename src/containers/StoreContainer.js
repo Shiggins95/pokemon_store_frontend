@@ -10,11 +10,9 @@ import ProductContainer from '../components/ProductContainer';
 const StoreContainer = props => {
   const dispatch = useDispatch();
   const { items, filteredItems, filters } = useSelector(state => state.items);
+  console.log('FILTERS:::', filters);
   const shoppingCart = useSelector(state => state.cart);
   const cartItems = shoppingCart.items;
-  // console.log('ITEMS SC: ', items);
-  // console.log('ITEMS FILTERED SC: ', filteredItems);
-  // console.log('FILTERS: ', filters);
   const getData = async () => {
     return await get('/api/products/');
   };
@@ -27,6 +25,7 @@ const StoreContainer = props => {
       getData().then(data => {
         data.forEach(item => {
           item.startingQuantity = item.quantity;
+          item.images = JSON.parse(item.images);
           cartItems.forEach(cartItem => {
             if (cartItem.name === item.name) {
               item.quantity -= cartItem.cartQuantity;
@@ -43,7 +42,7 @@ const StoreContainer = props => {
 
   return (
     <div className="store_container">
-      <StoreFilters />
+      <StoreFilters filters={filters}/>
       <ProductContainer items={filteredItems} innerText={innerText} />
     </div>
   );

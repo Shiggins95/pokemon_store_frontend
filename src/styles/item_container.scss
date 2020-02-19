@@ -1,0 +1,50 @@
+@import "./variables";
+@import "./mixins";
+
+#product_container{
+  @include flexRowEven;
+  min-height: 100vh;
+  .image_display, .product_info{
+    @include boxShadow;
+    @include flexCenterCol;
+    @include borderRadius(10px);
+    width: 40%;
+    height: 800px;
+  }
+  .product_info{
+    @include boxShadow;
+    @include flexCenterCol;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+    #inner_button{
+      @include fastTransition();
+      width: 250px;
+      margin: 5px 0;
+      padding: 10px 0;
+      text-decoration: none;
+      background: $primary_color;
+      font-size: 0.9em  ;
+      border-radius: 5px;
+      border: 1px solid $secondary_color;
+      font-weight: bold;
+      color: $secondary_color;
+      &:hover{
+        //@include buttonHover();
+        background: $secondary_color;
+        border: 1px solid $third_color;
+        color: $third_color;
+        cursor: pointer;
+      }
+      &:focus{
+        outline: none;
+      }
+      &:active{
+        @include buttonClick();
+      }
+    }
+  }
+}

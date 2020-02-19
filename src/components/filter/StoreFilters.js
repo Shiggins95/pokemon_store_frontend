@@ -8,9 +8,9 @@ import '../../styles/store_filters.css';
 const StoreFilters = props => {
   return (
     <div className="store_filters">
-      <TypeFilter />
-      <OutOfStockFilter />
-      <OtherFilter />
+      <TypeFilter {...props} />
+      <OutOfStockFilter {...props} />
+      <OtherFilter {...props} />
     </div>
   );
 };

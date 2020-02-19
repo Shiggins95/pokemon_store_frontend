@@ -16,18 +16,33 @@ const DisplayOptions = props => {
         <button onClick={() => changeDisplay('CREATE')}>Sign Up</button>
       </div>
     ),
-    LOGGED_IN_SUCCESS: <LoggedIn onClick={handleLogout} updateStage={changeDisplay}  />,
-    LOGGED_IN: <SelectPath onClick={changeDisplay} auth={auth} logout={handleLogout}/>,
+    LOGGED_IN_SUCCESS: <LoggedIn onClick={handleLogout} updateStage={changeDisplay} />,
+    LOGGED_IN: <SelectPath onClick={changeDisplay} auth={auth} logout={handleLogout} />,
     LOGIN: <Login onClick={changeDisplay} onSubmit={handleLogin} />,
     CREATE: <Create onClick={changeDisplay} onSubmit={handleLogin} />,
     WRONG_EMAIL: (
-      <Error reason="Wrong email was provided. Please try again." onClick={changeDisplay} location="LOGIN" />
+      <Error
+        reason="Wrong email was provided. Please try again."
+        onClick={changeDisplay}
+        location="LOGIN"
+        displayText="Try Again"
+      />
     ),
     WRONG_PWORD: (
-      <Error reason="The password entered was wrong. Please try again." onClick={changeDisplay} location="LOGIN" />
+      <Error
+        reason="The password entered was wrong. Please try again."
+        onClick={changeDisplay}
+        location="LOGIN"
+        displayText="Try Again"
+      />
     ),
     USER_EXISTS: (
-      <Error reason="A user already exists with your email. Please log in." onClick={changeDisplay} location="CREATE" />
+      <Error
+        reason="A user already exists with your email. Please log in."
+        onClick={changeDisplay}
+        location="LOGIN"
+        displayText="Login"
+      />
     )
   };
 
