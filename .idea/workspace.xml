@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51da55f8-5489-4d8c-b9e0-db706562ca89" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/containers/CheckoutContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/CheckoutContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/PaymentContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/PaymentContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/PaymentContainer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="215">
@@ -57,6 +57,15 @@
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -153,7 +162,6 @@
         <option value="$PROJECT_DIR$/src/components/ShoppingCart.js" />
         <option value="$PROJECT_DIR$/src/styles/navbar.scss" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/styles/product.scss" />
         <option value="$PROJECT_DIR$/src/components/Product.js" />
         <option value="$PROJECT_DIR$/src/styles/payment_container.scss" />
@@ -185,6 +193,7 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/containers/CheckoutContainer.js" />
         <option value="$PROJECT_DIR$/src/containers/PaymentContainer.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
       </list>
     </option>
   </component>
@@ -210,6 +219,11 @@
             <path>
               <item name="pokemon_store_frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="pokemon_store_frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokemon_store_frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokemon_store_frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pokemon_store_frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -303,7 +317,7 @@
       <option name="presentableId" value="Default" />
       <updated>1579650728103</updated>
       <workItem from="1579650730833" duration="19513000" />
-      <workItem from="1580080043391" duration="111531000" />
+      <workItem from="1580080043391" duration="112136000" />
     </task>
     <servers />
   </component>
@@ -313,7 +327,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131044000" />
+    <option name="totallyTimeSpent" value="131649000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -597,13 +611,6 @@
         <state relative-caret-position="-55" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/image_gallery.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -740,6 +747,13 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
         </state>
       </provider>
     </entry>
