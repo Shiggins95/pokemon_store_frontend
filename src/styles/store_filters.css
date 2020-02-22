@@ -6,4 +6,10 @@
   align-items: center;
 }
 
+@media (max-width: 800px) {
+  .store_filters {
+    visibility: hidden;
+  }
+}
+
 /*# sourceMappingURL=store_filters.css.map */

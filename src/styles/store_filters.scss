@@ -4,3 +4,9 @@
   width: 80%;
   @include flexCenterRow();
 }
+
+@media (max-width: 800px) {
+  .store_filters{
+    visibility: hidden;
+  }
+}
