@@ -9,14 +9,16 @@
 			<xsd:element name="mediatype" type="mediatype" maxOccurs="2" minOccurs="2" />
 			<xsd:element name="recordtype" type="recordtype" maxOccurs="unbounded" minOccurs="1" />
 			<xsd:element name="group" type="group" maxOccurs="unbounded" minOccurs="1" />
+			<xsd:element name="preference" type="preference" maxOccurs="unbounded" minOccurs="1" />
 		</xsd:sequence>
 	</xsd:complexType>
 
 	<xsd:complexType name="attribute">
 		<xsd:attribute name="name" type="xsd:string" use="required" />
-		<xsd:attribute name="type" type="xsd:string" use="required" />
+		<xsd:attribute name="type" type="xsd:string" use="optional" />
 		<xsd:attribute name="mandatory" type="xsd:boolean" use="optional" />
 		<xsd:attribute name="default" type="xsd:string" use="optional" />
+		<xsd:attribute name="value" type="xsd:string" use="optional" />
 		<xsd:attribute name="values" type="xsd:string" use="optional" />
 		<xsd:attribute name="length" type="xsd:int" use="optional" />
 		<xsd:attribute name="onlyallowedvalue" type="xsd:string" use="optional" />
@@ -104,6 +106,39 @@
 		<xsd:attribute name="name" type="xsd:string"/>
 	</xsd:complexType>
 
+	<xsd:complexType name="preference">
+		<xsd:sequence>
+			<xsd:element name="projecttype" type="projecttype" maxOccurs="1" minOccurs="1">
+			<xsd:element name="apply" type="apply" maxOccurs="1" minOccurs="1" />
+			<xsd:element name="attribute" type="attribute" maxOccurs="unbounded" minOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="projecttype">
+		<xsd:attribute name="values" type="xsd:string" use="required" />
+	</xsd:complexType>
+
+	<xsd:complexType name="apply">
+		<xsd:sequence>
+			<xsd:element name="projecttype" type="projecttype" maxOccurs="1" minOccurs="1">
+			<xsd:element name="allowedtype" type="allowedtype" maxOccurs="1" minOccurs="1" />
+			<xsd:element name="attribute" type="attribute" maxOccurs="unbounded" minOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string"/>
+	</xsd:complexType>
+
+	<xsd:complexType name="allowedtype">
+		<xsd:sequence>
+			<xsd:element name="projecttype" type="projecttype" maxOccurs="1" minOccurs="1">
+			<xsd:element name="allowedtype" type="allowedtype" maxOccurs="1" minOccurs="1" />
+			<xsd:element name="attribute" type="attribute" maxOccurs="unbounded" minOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string" use="required"/>
+		<xsd:attribute name="type" type="xsd:string" use="required"/>
+		<xsd:attribute name="refs" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+
 	<xsd:complexType name="mandatoriness">
 		<xsd:sequence>
 			<xsd:element name="condition" type="condition" maxOccurs="unbounded" minOccurs="1" />
@@ -142,12 +177,12 @@
 			<xsd:element name="subrecordtypegroup" type="subrecordtypegroup" maxOccurs="unbounded" minOccurs="0"/>
 			<xsd:element name="fieldset" type="fieldset" maxOccurs="unbounded" minOccurs="0" />
 			<xsd:element name="fragment" type="fragment" maxOccurs="unbounded" minOccurs="0" />
-            <xsd:sequence>
-                <xsd:element name="subrecordtype" type="subrecordtype" maxOccurs="unbounded" minOccurs="1"/>
-            </xsd:sequence>
-        </xsd:choice>
-        <xsd:attribute name="name" type="xsd:string"/>
-    </xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="subrecordtype" type="subrecordtype" maxOccurs="unbounded" minOccurs="1"/>
+			</xsd:sequence>
+		</xsd:choice>
+		<xsd:attribute name="name" type="xsd:string"/>
+	</xsd:complexType>
 
 	<xsd:complexType name="fieldset">
 		<xsd:sequence maxOccurs="unbounded" minOccurs="0">
@@ -158,6 +193,7 @@
 
 	<xsd:complexType name="fragment">
 		<xsd:sequence>
+			<xsd:element name="attribute" type="attribute" maxOccurs="unbounded" minOccurs="1" />
 			<xsd:element name="field" type="field" maxOccurs="unbounded" minOccurs="0" />
 			<xsd:element name="fieldset" type="fieldset" maxOccurs="unbounded" minOccurs="0" />
 			<xsd:element name="fragment" type="fragment" maxOccurs="unbounded" minOccurs="0" />
@@ -166,6 +202,7 @@
 		</xsd:sequence>
 		<xsd:attribute name="name" type="xsd:string"/>
 		<xsd:attribute name="type" type="xsd:string"/>
+		<xsd:attribute name="mandatory" type="xsd:boolean"/>
 	</xsd:complexType>
 
 	<xsd:complexType name="datafile">

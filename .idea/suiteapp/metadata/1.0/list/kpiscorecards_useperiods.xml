@@ -1,4 +1,4 @@
-<list id='kpiscorecards_useperiods'>
-	<value>F</value>
-	<value feature="ACCOUNTINGPERIODS">T</value>
+<list id="kpiscorecards_useperiods">
+  <value>F</value>
+  <value feature="ACCOUNTINGPERIODS">T</value>
 </list>

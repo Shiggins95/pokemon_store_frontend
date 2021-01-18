@@ -1,5 +1,5 @@
-<list id='customsegment_items_subtype'>
-	<value>BOTH</value>
-	<value>PURCHASE</value>
-	<value>SALE</value>
+<list id="customsegment_items_subtype">
+  <value>BOTH</value>
+  <value>PURCHASE</value>
+  <value>SALE</value>
 </list>
